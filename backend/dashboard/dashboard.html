@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEA Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <!-- Guard: si no hay token, redirigir a login antes de cargar nada -->
+  <script>
+    (function() {
+      if (!localStorage.getItem('cea_token')) {
+        window.location.replace('/dashboard/login.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="app-layout" id="main-wrapper">
+    <div id="sidebar-container"></div>
+    <div class="main-area">
+      <div id="router-view"></div>
+    </div>
+  </div>
+  <div id="toast-container"></div>
+  
+  <script type="module" src="app.js"></script>
+  <div id="jhonge-brand" style="position:fixed;bottom:0;left:0;right:0;text-align:center;padding:.5rem;font-size:.75rem;color:var(--text-sub,#94a3b8);background:var(--surface);border-top:1px solid var(--border);z-index:10;pointer-events:none">
+    Diseñado y desarrollado por
+    <a href="https://jhonge.com.co" target="_blank" style="font-weight:800;text-decoration:none;color:#9c0863;pointer-events:all">
+      <strong style="color:#9c0863">&lt;</strong>Jhonge<strong style="color:#9c0863">/&gt;</strong>
+    </a>
+  </div>
+</body>
+</html>

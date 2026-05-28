@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Nacional Mocoa | CEA FÉNIX — Escuela de Conducción Putumayo</title>
+    <meta
+      name="description"
+      content="La Nacional Mocoa — Escuela de conducción certificada en Mocoa, Putumayo. Licencias A2, B1, C1. Instructores avalados por el Ministerio de Transporte."
+    />
+    <meta
+      name="keywords"
+      content="conducción Mocoa, licencia conducir Putumayo, CEA Mocoa, escuela manejo Mocoa, curso conducción Putumayo"
+    />
+    <meta property="og:title" content="La Nacional Mocoa | CEA FÉNIX" />
+    <meta
+      property="og:description"
+      content="Obtén tu licencia de conducción en Mocoa. Cursos A2, B1 y C1 con instructores certificados."
+    />
+
+    <!-- CSS propios -->
+    <link rel="stylesheet" href="/lanacional/css/variables.css" />
+    <link rel="stylesheet" href="/lanacional/css/stylos.css" />
+    <link rel="stylesheet" href="/lanacional/css/header.css" />
+    <link rel="stylesheet" href="/lanacional/css/footer.css" />
+    <link rel="stylesheet" href="/lanacional/css/darkmode.css" />
+    <link rel="stylesheet" href="/lanacional/css/floating-buttons.css" />
+    <link rel="stylesheet" href="/lanacional/css/modal-promocion.css" />
+    <link rel="stylesheet" href="/lanacional/css/menu-hamburguesa.css" />
+
+    <!-- Fuentes y librerías externas -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+
+<!-- ═══════════════════════════════════════════
+     MODAL PROMOCIÓN
+     Para cambiar la oferta edita: #promo-title, #promo-desc,
+     la imagen/video en #promo-media, y el link de WhatsApp.
+════════════════════════════════════════════ -->
+<div id="promo-overlay" role="dialog" aria-modal="true" aria-labelledby="promo-title">
+  <div id="promo-box">
+    <!-- MEDIA: reemplaza el div placeholder con <img> o <iframe> de YouTube -->
+    <div id="promo-media">
+      <div class="promo-placeholder">
+        <span></span>
+        <p><img src="/lanacional/imgs/fondo2.png" alt=""></p>
+      </div>
+      <span id="promo-badge">🔥 Oferta especial</span>
+      <button id="promo-close" aria-label="Cerrar">✕</button>
+      <!-- Temporizador circular -->
+      <div id="promo-timer-wrap">
+        <svg id="promo-timer-svg" viewBox="0 0 36 36">
+          <circle id="promo-timer-bg" cx="18" cy="18" r="15.2"/>
+          <circle id="promo-timer-circle" cx="18" cy="18" r="15.2"/>
+        </svg>
+        <div id="promo-timer-num">10</div>
+      </div>
+    </div>
+    <!-- CONTENIDO -->
+    <div id="promo-body">
+      <h2 id="promo-title">¡Promoción del mes! 🎉</h2>
+      <p id="promo-desc">
+        Inscríbete este mes y obtén un <strong>descuento especial</strong> en tu curso de conducción.
+        Cupos limitados — ¡no dejes pasar esta oportunidad!
+      </p>
+      <div id="promo-actions">
+        <a id="promo-cta-wa"
+           href="https://wa.me/573001234568?text=Hola%2C%20vi%20la%20promoci%C3%B3n%20de%20La%20Nacional%20Mocoa%21"
+           target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> ¡Me interesa!
+        </a>
+        <button id="promo-skip">Ver después</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- HEADER -->
+    <header id="header" class="main-header">
+      <div class="logo">
+        <a href="/" class="logo-text"><span></span></a>
+      </div>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Menú"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav id="navbar" class="menu">
+        <ul>
+          <li><a href="#hero-mocoa">Inicio</a></li>
+          <li><a href="/">CEAFénix</a></li>
+          <li><a href="/lanacional/pages/cursos-mocoa.html">Cursos</a></li>
+          <li><a href="/lanacional/pages/sede1.html">Sedes</a></li>
+          <li><a href="#contacto-mocoa">Contacto</a></li>
+          <li>
+            <button id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero-mocoa" class="hero-mocoa">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <i class="fa-solid fa-location-dot"></i> Mocoa, Putumayo
+        </div>
+        <h1>Saca tu licencia<br />en <span>La Nacional</span><br />Mocoa</h1>
+        <p>
+          Centro de enseñanza automovilística avalado por el Ministerio de
+          Transporte. Instructores certificados, horarios flexibles y el mejor
+          ambiente para aprender a conducir.
+        </p>
+        <div class="hero-btns">
+          <a
+            href="https://wa.me/573001234568?text=Hola%2C%20me%20interesa%20un%20curso%20en%20La%20Nacional%20Mocoa"
+            target="_blank"
+            class="btn-wa"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Solicitar información
+          </a>
+          <a href="#cursos" class="btn-outline-w">
+            <i class="fa-solid fa-graduation-cap"></i> Ver cursos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <i class="fa-solid fa-certificate"></i> Avalado Ministerio de
+          Transporte
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-users"></i> +500 conductores certificados
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-clock"></i> Horarios flexibles Lun–Sáb
+        </div>
+        <div class="trust-item">
+          <i class="fa-solid fa-shield-halved"></i> Instructores certificados
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO CARDS -->
+    <section>
+      <div class="section-inner">
+        <span class="section-tag">Nuestra sede</span>
+        <h2 class="section-h">
+          Todo lo que necesitas<br />para obtener tu licencia
+        </h2>
+        <p class="section-sub">
+          En La Nacional Mocoa te acompañamos en todo el proceso, desde la
+          teoría hasta la práctica vial con vehículos modernos.
+        </p>
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h3>Dirección</h3>
+            <p>
+              Calle Principal, Centro de Mocoa<br />Mocoa, Putumayo, Colombia
+            </p>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3>WhatsApp directo</h3>
+            <p>+57 300 123 4568<br />Respuesta inmediata</p>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>Horario de atención</h3>
+            <p>Lunes a Sábado<br />7:00 AM — 6:00 PM</p>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon"><i class="fa-solid fa-car"></i></div>
+            <h3>Vehículos modernos</h3>
+            <p>
+              Flota actualizada con doble mando para mayor seguridad en la
+              práctica
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSOS -->
+    <section class="cursos-sec" id="cursos">
+      <div class="section-inner">
+        <span class="section-tag">Formación</span>
+        <h2 class="section-h">Elige tu categoría<br />de licencia</h2>
+        <p class="section-sub">
+          Ofrecemos todos los cursos exigidos por el Ministerio de Transporte
+          con metodología práctica y teórica.
+        </p>
+        <div class="cursos-grid" id="mocoa-cursos-grid">
+          <div class="curso-card cc-a2">
+            <span class="cc-emoji" id="mc1-emoji">🏍️</span>
+            <h3 id="mc1-titulo">A2 — Moto +125cc</h3>
+            <h4 id="mc1-precio">Precio: 1.200.000</h4>
+            <p id="mc1-desc">Licencia para motocicletas de alta cilindrada. Teoría, maniobrabilidad y práctica en vía.</p>
+            <span class="cc-badge" id="mc1-badge">Categoría A2</span>
+          </div>
+          <div class="curso-card cc-b1">
+            <span class="cc-emoji" id="mc2-emoji">🚗</span>
+            <h3 id="mc2-titulo">B1 — Vehículo Particular</h3>
+            <h4 id="mc2-precio">Precio: 1.200.000</h4>
+            <p id="mc2-desc">Automóvil mecánico y automático. El curso más solicitado para conducir tu propio vehículo.</p>
+            <span class="cc-badge" id="mc2-badge">Categoría B1</span>
+          </div>
+          <div class="curso-card cc-c1">
+            <span class="cc-emoji" id="mc3-emoji">🚕</span>
+            <h3 id="mc3-titulo">C1 — Servicio Público</h3>
+            <h4 id="mc3-precio">Precio: 1.200.000</h4>
+            <p id="mc3-desc">Transporte de pasajeros y carga. Ideal para taxistas, conductores de plataformas y servicio público.</p>
+            <span class="cc-badge" id="mc3-badge">Categoría C1</span>
+          </div>
+          <div class="curso-card cc-ref">
+            <span class="cc-emoji" id="mc4-emoji">🛡️</span>
+            <h3 id="mc4-titulo">Curso de Refuerzo</h3>
+            <h4 id="mc4-precio">Precio: 1.200.000</h4>
+            <p id="mc4-desc">Para conductores activos que quieren mejorar su técnica, manejo defensivo y seguridad vial.</p>
+            <span class="cc-badge" id="mc4-badge">Todos los niveles</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALIADOS -->
+    <section>
+      <div class="section-inner" style="text-align: center">
+        <span class="section-tag">Respaldados por</span>
+        <h2 class="section-h">Nuestros Aliados</h2>
+        <p class="section-sub" style="margin: 0 auto 2.5rem">
+          Trabajamos junto a instituciones y organizaciones que respaldan
+          nuestra calidad educativa.
+        </p>
+        <div class="aliados-mocoa-grid">
+          <a
+            href="/"
+            class="aliado-mocoa-btn"
+            title="CEA FÉNIX — Sede principal"
+          >
+            <span style="font-size: 2rem">🔥</span>
+            <div>
+              <strong>CEA FÉNIX</strong>
+              <small>Sede principal · Florencia, Caquetá</small>
+            </div>
+            <span class="aliado-arrow">→</span>
+          </a>
+          <div class="aliado-mocoa-btn aliado-placeholder">
+            <span style="font-size: 2rem">🤝</span>
+            <div><strong>Aliado 2</strong><small>Próximamente</small></div>
+          </div>
+          <div class="aliado-mocoa-btn aliado-placeholder">
+            <span style="font-size: 2rem">🏛️</span>
+            <div><strong>Aliado 3</strong><small>Próximamente</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURSOS Y DIPLOMADOS -->
+    <section style="background: var(--bg-section, #f1f5f9)">
+      <div class="section-inner">
+        <span class="section-tag">Formación continua</span>
+        <h2 class="section-h">Cursos, Diplomados<br />y Talleres</h2>
+        <p class="section-sub">
+          Más allá de la licencia, ofrecemos formación especializada para
+          conductores y profesionales del transporte.
+        </p>
+        <div class="diplomas-grid">
+          <div class="diploma-card">
+            <div
+              class="dc-icon"
+              style="background: linear-gradient(135deg, #0f766e, #14b8a6)"
+            >
+              🛡️
+            </div>
+            <h3>Manejo Defensivo</h3>
+            <p>
+              Técnicas avanzadas para anticipar riesgos, reducir accidentes y
+              conducir con mayor seguridad en cualquier condición.
+            </p>
+            <div class="dc-tags">
+              <span>8 horas</span><span>Certificado</span
+              ><span>Todos los niveles</span>
+            </div>
+            <a
+              href="https://wa.me/573001234568?text=Hola%2C%20me%20interesa%20el%20curso%20de%20Manejo%20Defensivo"
+              target="_blank"
+              class="dc-cta"
+              >Inscribirme <i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+          <div class="diploma-card">
+            <div
+              class="dc-icon"
+              style="background: linear-gradient(135deg, #7c3aed, #8b5cf6)"
+            >
+              🚛
+            </div>
+            <h3>Conducción de Carga Pesada</h3>
+            <p>
+              Formación especializada para conductores de camiones, tractomulas
+              y vehículos de carga en rutas nacionales.
+            </p>
+            <div class="dc-tags">
+              <span>16 horas</span><span>Certificado</span
+              ><span>Licencia C2</span>
+            </div>
+            <a
+              href="https://wa.me/573001234568?text=Hola%2C%20me%20interesa%20el%20curso%20de%20Carga%20Pesada"
+              target="_blank"
+              class="dc-cta"
+              >Inscribirme <i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+          <div class="diploma-card">
+            <div
+              class="dc-icon"
+              style="background: linear-gradient(135deg, #b45309, #f59e0b)"
+            >
+              🏫
+            </div>
+            <h3>Diplomado en Seguridad Vial</h3>
+            <p>
+              Programa completo sobre normas de tránsito, primeros auxilios
+              viales, señalización y gestión del riesgo en carretera.
+            </p>
+            <div class="dc-tags">
+              <span>40 horas</span><span>Diploma</span
+              ><span>Presencial/Virtual</span>
+            </div>
+            <a
+              href="https://wa.me/573001234568?text=Hola%2C%20me%20interesa%20el%20Diplomado%20en%20Seguridad%20Vial"
+              target="_blank"
+              class="dc-cta"
+              >Inscribirme <i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+          <div class="diploma-card">
+            <div
+              class="dc-icon"
+              style="background: linear-gradient(135deg, #0369a1, #0ea5e9)"
+            >
+              🚑
+            </div>
+            <h3>Primeros Auxilios Viales</h3>
+            <p>
+              Aprende a actuar correctamente ante accidentes de tránsito:
+              atención a víctimas, señalización y contacto con emergencias.
+            </p>
+            <div class="dc-tags">
+              <span>6 horas</span><span>Certificado</span
+              ><span>Obligatorio CEA</span>
+            </div>
+            <a
+              href="https://wa.me/573001234568?text=Hola%2C%20me%20interesa%20el%20taller%20de%20Primeros%20Auxilios"
+              target="_blank"
+              class="dc-cta"
+              >Inscribirme <i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2.5rem">
+        <a href="/lanacional/pages/cursos-mocoa.html" class="btn-ver-mas">
+          <i class="fa-solid fa-graduation-cap"></i> Ver todos los cursos y
+          diplomados
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- PASOS -->
+    <section>
+      <div class="section-inner">
+        <span class="section-tag">¿Cómo funciona?</span>
+        <h2 class="section-h">Obtén tu licencia<br />en 4 pasos</h2>
+        <p class="section-sub">
+          Proceso simple, transparente y acompañado por nuestros asesores en
+          cada etapa.
+        </p>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Contáctanos</h3>
+            <p>
+              Escríbenos por WhatsApp o visítanos. Te asesoramos sin costo sobre
+              el curso que necesitas.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Inscríbete</h3>
+            <p>
+              Selecciona tu horario, realiza el pago y recibe tu material de
+              estudio para iniciar.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Toma el curso</h3>
+            <p>
+              Clases teóricas y prácticas con instructores certificados. A tu
+              ritmo, en grupos pequeños.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>Obtén tu licencia</h3>
+            <p>
+              Aprueba el examen teórico y práctico. Tramitamos tu certificado
+              para el organismo de tránsito.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="map-sec">
+      <div class="section-inner">
+        <span class="section-tag">Ubicación</span>
+        <h2 class="section-h">¿Cómo llegar?</h2>
+        <div class="map-wrap">
+          <div class="map-info">
+            <div class="mi-row">
+              <div class="mi-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <h4>Dirección</h4>
+                <p>Calle Principal, Centro<br />Mocoa, Putumayo</p>
+              </div>
+            </div>
+            <div class="mi-row">
+              <div class="mi-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>+57 300 123 4568</p>
+              </div>
+            </div>
+            <div class="mi-row">
+              <div class="mi-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <h4>Horario</h4>
+                <p>Lun – Sáb: 7AM – 6PM</p>
+              </div>
+            </div>
+            <div class="mi-row">
+              <div class="mi-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h4>Correo</h4>
+                <p>mocoa@ceafenix.com</p>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/573001234568"
+              target="_blank"
+              class="btn-wa"
+              style="margin-top: 0.5rem; justify-content: center"
+            >
+              <i class="fa-brands fa-whatsapp"></i> Escribir ahora
+            </a>
+          </div>
+          <iframe
+            src="https://www.google.com/maps?q=Mocoa+Putumayo+Colombia&output=embed"
+            class="map-iframe"
+            loading="lazy"
+            title="Mapa La Nacional Mocoa"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto-mocoa" class="contacto-sec">
+      <div class="section-inner">
+        <div class="contacto-wrap">
+          <!-- INFO -->
+          <div class="contacto-info">
+            <span class="section-tag">Contáctanos</span>
+            <h2 class="section-h">¿Tienes preguntas?<br />Estamos aquí</h2>
+            <p class="section-sub">
+              Escríbenos o visítanos. Te responderemos lo antes posible.
+            </p>
+            <div class="contacto-items">
+              <a
+                href="https://wa.me/573001234568"
+                target="_blank"
+                class="ci-row ci-wa"
+              >
+                <div class="ci-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                <div>
+                  <strong>WhatsApp</strong><span>+57 300 123 4568</span>
+                </div>
+              </a>
+              <div class="ci-row">
+                <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <strong>Correo</strong><span>mocoa@ceafenix.com</span>
+                </div>
+              </div>
+              <div class="ci-row">
+                <div class="ci-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <strong>Dirección</strong
+                  ><span>Calle Principal, Centro · Mocoa, Putumayo</span>
+                </div>
+              </div>
+              <div class="ci-row">
+                <div class="ci-icon"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <strong>Horario</strong
+                  ><span>Lunes a Sábado · 7:00 AM – 6:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FORMULARIO -->
+          <div class="contacto-form-wrap">
+            <form id="form-mocoa" novalidate>
+              <div class="cf-group">
+                <label for="cf_nombre">Nombre completo</label>
+                <input
+                  type="text"
+                  id="cf_nombre"
+                  name="from_name"
+                  placeholder="Tu nombre"
+                  required
+                />
+              </div>
+              <div class="cf-group">
+                <label for="cf_email">Correo electrónico</label>
+                <input
+                  type="email"
+                  id="cf_email"
+                  name="reply_to"
+                  placeholder="tucorreo@email.com"
+                  required
+                />
+              </div>
+              <div class="cf-group">
+                <label for="cf_tel"
+                  >Teléfono <span class="cf-optional">(opcional)</span></label
+                >
+                <input
+                  type="tel"
+                  id="cf_tel"
+                  name="phone"
+                  placeholder="3001234567"
+                  pattern="^(\+?57)?[3][0-9]{9}$"
+                  inputmode="tel"
+                  maxlength="13"
+                />
+                <small id="cf_tel_hint" class="cf-hint"
+                  >Número colombiano: 3XXXXXXXXX</small
+                >
+              </div>
+              <div class="cf-group">
+                <label for="cf_asunto">¿Qué curso te interesa?</label>
+                <select id="cf_asunto" name="subject">
+                  <option value="">Selecciona un curso</option>
+                  <option>A2 — Moto +125cc</option>
+                  <option>B1 — Vehículo Particular</option>
+                  <option>C1 — Servicio Público</option>
+                  <option>Curso de Refuerzo</option>
+                  <option>Manejo Defensivo</option>
+                  <option>Diplomado en Seguridad Vial</option>
+                  <option>Otro / Información general</option>
+                </select>
+              </div>
+              <div class="cf-group">
+                <label for="cf_msg">Mensaje</label>
+                <textarea
+                  id="cf_msg"
+                  name="message"
+                  rows="4"
+                  placeholder="Escribe tu consulta..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="cf-submit" id="cf_submit">
+                <span id="cf_btn_text"
+                  ><i class="fa-solid fa-paper-plane"></i> Enviar mensaje</span
+                >
+                <span id="cf_btn_load" style="display: none"
+                  ><i class="fa-solid fa-spinner fa-spin"></i> Enviando...</span
+                >
+              </button>
+              <div
+                id="cf_feedback"
+                class="cf-feedback"
+                style="display: none"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-sec">
+      <div class="section-inner">
+        <span
+          class="section-tag"
+          style="background: rgba(255, 255, 255, 0.15); color: #fff"
+          >¡Cupos limitados!</span
+        >
+        <h2 class="section-h">¿Listo para sacar tu licencia?</h2>
+        <p>
+          Contáctanos hoy y un asesor te guiará en todo el proceso. Cupos por
+          orden de llegada.
+        </p>
+        <div class="cta-btns">
+          <a
+            href="https://wa.me/573001234568?text=Hola%2C%20quiero%20inscribirme%20en%20La%20Nacional%20Mocoa"
+            target="_blank"
+            class="btn-wa"
+          >
+            <i class="fa-brands fa-whatsapp"></i> Inscribirme ahora
+          </a>
+          <a href="/lanacional/pages/sede1.html" class="btn-outline-w">
+            <i class="fa-solid fa-building"></i> Ver todas las sedes
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-mocoa">
+      <p>© 2026 La Nacional Mocoa · CEA FÉNIX · Mocoa, Putumayo</p>
+      <p style="margin-top: 0.3rem">
+        <a href="/">Volver al sitio principal</a> ·
+        <a href="/lanacional/pages/contacto.html">Contacto</a>
+      </p>
+      <small>
+        Diseñado y desarrollado por
+        <a class="author" href="https://jhonge.com.co" target="_blank">
+          <strong>&lt;</strong>Jhonge<strong>/&gt;</strong>
+        </a>
+      </small>
+    </footer>
+
+    <!-- Scripts — orden importa -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="/lanacional/js/menu-hamburguesa.js" defer></script>
+    <script src="/lanacional/js/modal-promocion.js" defer></script>
+    <script src="/lanacional/js/floating-buttons.js" defer></script>
+    <script src="/lanacional/js/mocoa-cursos.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contacto | CEA FÉNIX</title>
+
+  <meta
+    name="description"
+    content="Contáctanos para más información sobre cursos de conducción, licencias y horarios en Florencia Caquetá."
+  />
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <!-- CSS -->
+
+ <link rel="stylesheet" href="../css/blog.css" />
+   <link rel="stylesheet" href="../css/courses.css">
+   <link rel="stylesheet" href="../css/darkmode.css" />
+   <link rel="stylesheet" href="../css/estilos.css">
+   <link rel="stylesheet" href="../css/footer.css" />
+   <link rel="stylesheet" href="../css/header.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <link rel="stylesheet" href="../css/social.css">
+   <link rel="stylesheet" href="../css/variables.css">
+
+  <link rel="stylesheet" href="../css/floating-buttons.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
+  <header class="main-header">
+
+    <div class="logo"><a href="../index.html" class="logo-text"><span></span></a></div>
+  <button class="menu-toggle" id="menu-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+   <nav id="navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html#cursos">Cursos</a></li>
+          <li><a href="../index.html#nosotros">Nosotros</a></li>
+          <li><a href="../pages/normas.html">Educación Vial</a></li>
+          <li><a href="../pages/store.html">Tienda</a></li>
+          <li><a href="../pages/blog.html">Blog</a></li>
+          <li><a href="../pages/sede1.html">Sedes</a></li>
+          <li><a href="../pages/contacto.html">Contacto</a></li>
+          <li class="social-nav-item">
+            <div class="social-nav">
+              <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </li>
+          <li>
+            <button id="theme-toggle">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+  </header>
+
+  <!-- =========================
+       HERO CONTACTO
+  ========================= -->
+
+  <section class="contact-hero">
+
+    <div class="contact-overlay"></div>
+
+    <div class="contact-hero-content">
+
+      <!-- <span class="tag-contact">
+        Atención personalizada
+      </span> -->
+
+      <h1>
+        Contáctanos y empieza hoy tu proceso de conducción
+      </h1>
+
+      <p>
+        Nuestro equipo está listo para ayudarte con cursos,
+        licencias, horarios, pagos y asesoría personalizada.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CONTACTO
+  ========================= -->
+
+  <section class="contact-section">
+
+    <!-- INFO -->
+
+    <div class="contact-info">
+
+      <h2>Información de contacto</h2>
+
+      <p>
+        Puedes escribirnos directamente por WhatsApp o visitarnos
+        en nuestras instalaciones en Florencia – Caquetá.
+      </p>
+
+      <div class="info-card">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <div>
+
+          <h3>Dirección</h3>
+
+          <p>
+            Barrio El Triunfo, Florencia – Caquetá
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="info-card">
+
+        <i class="fa-solid fa-phone"></i>
+
+        <div>
+
+          <h3>WhatsApp</h3>
+
+          <p>+57 300 123 4567</p>
+
+        </div>
+
+      </div>
+
+      <div class="info-card">
+
+        <i class="fa-solid fa-clock"></i>
+
+        <div>
+
+          <h3>Horarios</h3>
+
+          <p>
+            Lunes a Sábado<br>
+            7:00 AM - 6:00 PM
+          </p>
+
+        </div>
+
+      </div>
+
+      <a
+        href="https://wa.me/573001234567"
+        target="_blank"
+        class="contact-btn"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Escribir por WhatsApp
+      </a>
+
+    </div>
+
+    <!-- FORMULARIO -->
+
+    <div class="contact-form-container" id="form-contacto">
+
+      <form class="contact-form" id="contacto-form">
+
+        <h2>Envíanos un mensaje</h2>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="contact-nombre"
+            name="from_name"
+            placeholder="Nombre completo"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <input
+            type="email"
+            id="contact-email"
+            name="reply_to"
+            placeholder="Correo electrónico"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <input
+            type="tel"
+            id="contact-telefono"
+            name="phone"
+            placeholder="Ej: 3001234567 o +573001234567"
+            pattern="^(\+?57)?[3][0-9]{9}$"
+            inputmode="tel"
+            maxlength="13"
+            title="Ingresa un número celular colombiano válido (10 dígitos, ej: 3001234567)"
+          />
+          <small class="field-hint" id="phone-hint" style="display:none;color:#dc2626;font-size:.8rem;margin-top:.25rem">
+            Número inválido. Ej: 3001234567 o +573001234567
+          </small>
+        </div>
+
+        <div class="input-group">
+          <textarea
+            id="contact-mensaje"
+            name="message"
+            placeholder="Escribe tu mensaje..."
+            rows="6"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" id="contact-submit">
+          <span id="contact-btn-text">Enviar mensaje</span>
+          <span id="contact-btn-loading" style="display:none"><i class="fa-solid fa-spinner fa-spin"></i> Enviando...</span>
+        </button>
+
+        <div id="contact-feedback" style="display:none; margin-top:1rem; padding:.75rem 1rem; border-radius:8px; font-weight:600;"></div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       MAPA
+  ========================= -->
+
+  <section class="map-section">
+
+    <h2>Ubicación</h2>
+
+    <p>
+      Estamos ubicados en Florencia – Caquetá.
+    </p>
+
+    <iframe
+      src="https://www.google.com/maps?q=Florencia%20Caquetá&output=embed"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+
+  </section>
+
+  <!-- =========================
+       CTA FINAL
+  ========================= -->
+
+  <section class="cta-contact">
+
+    <h2>
+      ¿Listo para obtener tu licencia?
+    </h2>
+
+    <p>
+      Inscripciones abiertas y horarios flexibles.
+    </p>
+
+    <a
+      href="https://wa.me/573001234567"
+      target="_blank"
+      class="contact-btn"
+    >
+      Solicitar información
+    </a>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer class="main-footer">
+
+    <p>© 2026 CEA FÉNIX</p>
+
+  <small>
+        Diseñado por 
+        <a class="author" href="https://jhonge.com.co" target="_blank">
+         <strong>&lt;</strong>Jhonge<strong>/&gt;</strong>
+        </a>
+      </small>
+
+  </footer>
+
+  <!-- =========================
+       BOTÓN ARRIBA
+  ========================= -->
+
+  
+
+  <!-- JS -->
+
+  <script src="../js/main.js" type="module"></script>
+  <script src="../js/floating-buttons.js" defer></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // ══════════════════════════════════════════════════════════
+    // EMAILJS CONFIG
+    // 1. Crea cuenta en https://www.emailjs.com/ (gratis)
+    // 2. Crea un Email Service (Gmail, Outlook, etc.)
+    // 3. Crea un Email Template con variables:
+    //    {{from_name}}, {{reply_to}}, {{phone}}, {{message}}
+    // 4. Reemplaza las 3 constantes de abajo con tus datos
+    // ══════════════════════════════════════════════════════════
+    const EMAILJS_PUBLIC_KEY  = "TU_PUBLIC_KEY";   // Account → API Keys
+    const EMAILJS_SERVICE_ID  = "TU_SERVICE_ID";   // Email Services → Service ID
+    const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID";  // Email Templates → Template ID
+
+    if (EMAILJS_PUBLIC_KEY !== "TU_PUBLIC_KEY") {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    const form      = document.getElementById("contacto-form");
+    const btnText   = document.getElementById("contact-btn-text");
+    const btnLoad   = document.getElementById("contact-btn-loading");
+    const feedback  = document.getElementById("contact-feedback");
+    const submitBtn = document.getElementById("contact-submit");
+    const phoneInput = document.getElementById("contact-telefono");
+    const phoneHint  = document.getElementById("phone-hint");
+
+    // Validación teléfono colombiano en tiempo real
+    phoneInput?.addEventListener("input", () => {
+      const val = phoneInput.value.trim();
+      if (val === "") { phoneHint.style.display = "none"; return; }
+      const ok = /^(\+?57)?[3][0-9]{9}$/.test(val.replace(/\s/g, ""));
+      phoneHint.style.display = ok ? "none" : "block";
+      phoneInput.style.borderColor = ok ? "" : "#dc2626";
+    });
+    phoneInput?.addEventListener("blur", () => {
+      const val = phoneInput.value.trim();
+      if (val === "") { phoneInput.style.borderColor = ""; return; }
+      const ok = /^(\+?57)?[3][0-9]{9}$/.test(val.replace(/\s/g, ""));
+      if (ok) phoneInput.style.borderColor = "#059669";
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Validar teléfono si fue llenado
+      const phoneVal = phoneInput.value.trim();
+      if (phoneVal && !/^(\+?57)?[3][0-9]{9}$/.test(phoneVal.replace(/\s/g, ""))) {
+        phoneHint.style.display = "block";
+        phoneInput.focus();
+        return;
+      }
+
+      // Verificar config EmailJS
+      if (EMAILJS_PUBLIC_KEY === "TU_PUBLIC_KEY") {
+        feedback.innerHTML = `⚠️ <strong>EmailJS no configurado.</strong> Para activar el formulario, reemplaza las credenciales en el código HTML.<br>
+          <small>Mientras tanto, escríbenos por <a href="https://wa.me/573001234567" target="_blank" style="color:#059669">WhatsApp</a>.</small>`;
+        feedback.style.background = "#fffbeb";
+        feedback.style.color = "#92400e";
+        feedback.style.display = "block";
+        return;
+      }
+
+      btnText.style.display = "none";
+      btnLoad.style.display = "inline";
+      submitBtn.disabled    = true;
+      feedback.style.display = "none";
+
+      try {
+        await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form);
+        feedback.innerHTML  = "✅ <strong>¡Mensaje enviado!</strong> Te responderemos en menos de 24 horas.";
+        feedback.style.background = "#d1fae5";
+        feedback.style.color      = "#065f46";
+        feedback.style.display    = "block";
+        form.reset();
+        phoneInput.style.borderColor = "";
+      } catch (err) {
+        feedback.innerHTML  = `❌ Error al enviar. <a href="https://wa.me/573001234567" target="_blank" style="color:#991b1b;font-weight:700">Escríbenos por WhatsApp</a>`;
+        feedback.style.background = "#fee2e2";
+        feedback.style.color      = "#991b1b";
+        feedback.style.display    = "block";
+        console.error("EmailJS error:", err);
+      } finally {
+        btnText.style.display = "inline";
+        btnLoad.style.display = "none";
+        submitBtn.disabled    = false;
+      }
+    });
+  </script>
+</body>
+</html>

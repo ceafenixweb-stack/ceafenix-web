@@ -1,0 +1,777 @@
+<!-- CONFIGURACIÓN -->
+<!--
+NOMBRE ESCUELA: Escuela de Conducción Pro
+CIUDAD: Florencia - Caquetá
+WHATSAPP: 573115218996
+-->
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="" />
+    <meta property="og:title" />
+    <meta property="og:image" />
+
+    <title>
+      Escuela de Conducción en Florencia Caquetá | Cursos y Licencias
+    </title>
+
+    <meta
+      name="description"
+      content="Escuela de conducción en Florencia Caquetá. Cursos de manejo, clases prácticas, licencias, refrendación y seguros. Atención personalizada."
+    />
+
+    <link rel="stylesheet" href="./css/blog.css" />
+    <link rel="stylesheet" href="./css/courses.css" />
+    <link rel="stylesheet" href="./css/darkmode.css" />
+    <link rel="stylesheet" href="./css/estilos.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./css/social.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/modal-promocion.css" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/floating-buttons.css" />
+    <style></style>
+  </head>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DrivingSchool",
+      "name": "Escuela de Conducción Pro",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Barrio El Triunfo",
+        "addressLocality": "Florencia",
+        "addressRegion": "Caquetá",
+        "addressCountry": "CO"
+      },
+      "telephone": "+57 3001234567",
+      "url": "https://TU-DOMINIO.com"
+    }
+  </script>
+
+  <body>
+    <!-- ═══════════════════════════════════════════
+     MODAL PROMOCIÓN
+     Para cambiar la oferta edita: #promo-title, #promo-desc,
+     la imagen/video en #promo-media, y el link de WhatsApp.
+════════════════════════════════════════════ -->
+    <div
+      id="promo-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="promo-title"
+    >
+      <div id="promo-box">
+        <!-- MEDIA: reemplaza el div placeholder con <img> o <iframe> de YouTube -->
+        <div id="promo-media">
+          <div class="promo-placeholder">
+            <span></span>
+            <p><img src="./imgs/fondo2.png" alt="" /></p>
+          </div>
+          <span id="promo-badge">🔥 Oferta especial</span>
+          <button id="promo-close" aria-label="Cerrar">✕</button>
+          <!-- Temporizador circular -->
+          <div id="promo-timer-wrap">
+            <svg id="promo-timer-svg" viewBox="0 0 36 36">
+              <circle id="promo-timer-bg" cx="18" cy="18" r="15.2" />
+              <circle id="promo-timer-circle" cx="18" cy="18" r="15.2" />
+            </svg>
+            <div id="promo-timer-num">10</div>
+          </div>
+        </div>
+        <!-- CONTENIDO -->
+        <div id="promo-body">
+          <h2 id="promo-title">¡Promoción del mes! 🎉</h2>
+          <p id="promo-desc">
+            Inscríbete este mes y obtén un
+            <strong>descuento especial</strong> en tu curso de conducción. Cupos
+            limitados — ¡no dejes pasar esta oportunidad!
+          </p>
+          <div id="promo-actions">
+            <a
+              id="promo-cta-wa"
+              href="https://wa.me/573115218996?text=Hola%2C%20vi%20la%20promoci%C3%B3n%20y%20me%20interesa%21"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-brands fa-whatsapp"></i> ¡Me interesa!
+            </a>
+            <button id="promo-skip">Ver después</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="main-header">
+      <div class="logo">
+        <a href="#inicio" class="logo-text"><span></span></a>
+      </div>
+
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+
+      <nav id="navbar">
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="./pages/normas.html">Educación Vial</a></li>
+          <li><a href="./pages/store.html">Tienda</a></li>
+          <li><a href="./pages/blog.html">Blog</a></li>
+          <li><a href="./pages/contacto.html">Contacto</a></li>
+
+          <li class="social-nav-item">
+            <div class="social-nav">
+              <a href="#" target="_blank" title="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" target="_blank" title="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" target="_blank" title="TikTok"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+              <a href="#" target="_blank" title="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </li>
+          <li>
+            <button id="theme-toggle">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero hidden">
+      <div class="titulo">
+        <h1>
+          <span class="highlight">Fomentando "Cultura VIAL"</span>
+        </h1>
+
+        <p>
+          <strong>CEA el FÉNIX,</strong> es un Centro de Enseñanza
+          Automovilística legalmente constituido y avalado por la Secretaria de
+          educación Municipal (Lic. funcionamiento No.0836 y registro de
+          programa No.0837 del 23 de diciembre de 2021). Como entidad registrada
+          ante el sector de Tránsito y Transporte con el ID RUNT 21634497,
+          capacitamos en las categorias <strong> A2, B1, C1</strong>,
+          garantizando que tu curso sea totalmente legítimo y tu aprendizaje,
+          100% profesional.
+        </p>
+
+        <!-- BOTONES HERO -->
+        <div class="hero-buttons">
+          <a href="#contacto" class="cta">Agenda tu clase</a>
+
+          <a
+            href="https://wa.me/573115218996?text=Hola,%20quiero%20información%20sobre%20los%20cursos%20de%20conducción%20en%20Florencia%20Caquetá"
+            class="cta cta-outline"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-img" id="hero-img-bg"></div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="services super-contenedor hidden">
+      <div class="capa-video">
+        <iframe
+          id="iframe-servicios"
+          src="https://www.youtube.com/embed/2243U1B6rXQ?autoplay=1&mute=1&loop=1&playlist=2243U1B6rXQ&controls=0&rel=0&showinfo=0&iv_load_policy=3"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+      <div class="capa-oscura"></div>
+
+      <h2>Servicios</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3><i class="fa-solid fa-car-rear"></i> Cursos de Conducción</h3>
+          <p>*Clases teóricas y prácticas para principiantes y avanzados.</p>
+          <p>*Cursos de conducción A2 B1 C1.</p>
+          <p>*Recategorización.</p>
+          <p>*Horas de refuerzo.</p>
+        </div>
+
+        <div class="card">
+          <h3>
+            <i class="fa-regular fa-clipboard"></i> Licencias y Refrendación
+          </h3>
+          <p>*Trámite y renovación según normatividad vigente.</p>
+          <p>*Recategorización de licencias y refrendación.</p>
+          <p>*Duplicados y refrendación de licencia de conducción.</p>
+          <p>*Duplicados de placas de servicio público y particular.</p>
+        </div>
+
+        <div class="card">
+          <h3><i class="fa-solid fa-shield"></i> SOAT</h3>
+          <p>*Venta de seguros obligatorios-SOAT.</p>
+
+          <p>*⁠Permiso Internacional de Conducción.</p>
+          <p>*⁠Examen Médico CRC.</p>
+          <p>*⁠Impresión de lamina.</p>
+          <p></p>
+          <p></p>
+        </div>
+
+        <div class="card">
+          <h3><i class="fa-solid fa-award"></i> Cursos Certificados</h3>
+          <p>*Cursos certificados.</p>
+          <p>*Cursos de sustancias Peligrosas-SISCOMP.</p>
+          <p>
+            *Capacitaciones para empresas en manejo defensivo teorico-práctico.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="requisitos" class="requirements hidden">
+      <h2>Requisitos</h2>
+      <p>
+        Todo lo que necesitas saber para adquirir tu licencia de conducción.
+      </p>
+
+      <div class="courses-grid">
+        <div class="course-card">
+          <h3><i class="fa-solid fa-id-card"></i> Edad</h3>
+          <ul>
+            <li>
+              ✔ Tener 16 años, si es para conducir vehículos de uso
+              particular,moto A2 o B1.
+            </li>
+            <li>
+              ✔ Tener 18 años, si es para conducir vehículo de servicio público
+              C1.
+            </li>
+            <li>✔ No tener comparendos.</li>
+            <li>
+              ✔ A1: Autoriza la conducción de motocicletas con un cilindraje
+              igual o menor a 125 c.c.
+            </li>
+            <li>
+              ✔ A2: Para motocicletas, motociclos y mototriciclos con cilindraje
+              superior a 125 c.c (incluye las motos de la categoría A1).
+            </li>
+          </ul>
+          <a href="https://mintransporte.gov.co/" target="_blank">
+            Más información...</a
+          >
+        </div>
+
+        <div class="course-card">
+          <h3><i class="fa-solid fa-car-side"></i> R.U.N.T</h3>
+          <ul>
+            <li>
+              ✔ Debes estar inscrito en el registro único nacional de tránsito
+              (R.U.N.T) para obtener tu licencia de conducción. Esta es la BASE
+              DE DATOS oficial que contiene la información de todos los
+              conductores, vehículos y licencias en Colombia.
+            </li>
+            <li>✔ Preparación para exámenes</li>
+          </ul>
+          <a
+            href="https://www.runt.gov.co/actores/ciudadano/consulta-de-vehiculos-por-placa"
+            target="_blank"
+          >
+            Más información...
+          </a>
+        </div>
+
+        <div class="course-card">
+          <h3><i class="fa-solid fa-stethoscope"></i> Examen Médico</h3>
+          <ul>
+            <li>
+              ✔ Haber aprobado el examen de aptitud física, mental y de
+              coordinación motriz para conducir vehículos de la categoría que
+              aspira a obtener la licencia. Este certificado debes realizarlo en
+              <strong>CRC VALORAR CONDUCTORES</strong>.
+            </li>
+          </ul>
+        </div>
+        <div class="course-card">
+          <h3><i class="fa-brands fa-hotjar"></i> Tu mejor experiencia</h3>
+          <ul>
+            <li>✔ Manejo defensivo</li>
+            <li>✔ Perfeccionamiento</li>
+            <li>✔ Confianza al volante</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-buttons">
+        <a href="#cursos" class="cta">Conoce nuestros cursos</a>
+      </div>
+    </section>
+
+    <!-- CURSOS -->
+    <section id="cursos" class="courses hidden">
+      <h2>Nuestros Cursos</h2>
+      <p class="courses-subtitle">
+        Programas diseñados para aprender a conducir con seguridad.
+      </p>
+
+      <div class="courses-grid">
+        <div class="course-card course-img1">
+          <img src="./imgs/moto.png" alt="moto" />
+          <h3>A2 Moto +125cc</h3>
+          <div class="precio">
+            <span id="precio-moto">id="precio-moto".200.000</span>
+            <p>
+              <strong>todo incluido </strong> (Examen Médico CRC, Curso teorico
+              y práctico en conducción, derechos de transito para impresión de
+              lamina)
+            </p>
+          </div>
+
+          <ul>
+            <li><i class="fa-regular fa-clock"></i> Horarios flexibles</li>
+            <li><i class="fa-solid fa-car"></i> Vehículos adecuados</li>
+            <li>
+              <i class="fa-solid fa-envelopes-bulk"></i> Facilidades de pagos
+            </li>
+            <li><i class="fa-solid fa-gavel"></i> Procesos legales</li>
+          </ul>
+          <a
+            href="https://wa.me/573115218996"
+            target="_blank"
+            class="course-btn"
+          >
+            👉 Quiero este curso
+          </a>
+        </div>
+
+        <div class="course-card course-img2">
+          <img src="./imgs/auto.png" alt="carro" />
+          <h3>C1 servicio público</h3>
+          <div class="precio">
+            <span id="precio-carro-c1">id="precio-carro-c1".200.000</span>
+            <p>
+              <strong>todo incluido </strong> (Examen Médico CRC, Curso teorico
+              y práctico en conducción, derechos de transito para impresión de
+              lamina)
+            </p>
+          </div>
+          <ul>
+            <li><i class="fa-regular fa-clock"></i> Horarios flexibles</li>
+            <li><i class="fa-solid fa-car"></i> Vehículos adecuados</li>
+            <li>
+              <i class="fa-solid fa-envelopes-bulk"></i> Facilidades de pagos
+            </li>
+            <li><i class="fa-solid fa-gavel"></i> Procesos legales</li>
+          </ul>
+          <a
+            href="https://wa.me/573115218996"
+            target="_blank"
+            class="course-btn"
+          >
+            👉 Quiero este curso
+          </a>
+        </div>
+
+        <div class="course-card course-img3">
+          <img src="./imgs/taxi.png" alt="taxi" />
+          <h3>B1 Vehículo particular</h3>
+          <div class="precio">
+            <span id="precio-carro-b1">id="precio-carro-b1".200.000</span>
+            <p>
+              <strong>todo incluido </strong> (Examen Médico CRC, Curso teorico
+              y práctico en conducción, derechos de transito para impresión de
+              lamina)
+            </p>
+          </div>
+          <ul>
+            <li><i class="fa-regular fa-clock"></i> Horarios flexibles</li>
+            <li><i class="fa-solid fa-car"></i> Vehículos adecuados</li>
+            <li>
+              <i class="fa-solid fa-envelopes-bulk"></i> Facilidades de pagos
+            </li>
+            <li><i class="fa-solid fa-gavel"></i> Procesos legales</li>
+          </ul>
+          <a
+            href="https://wa.me/573115218996"
+            target="_blank"
+            class="course-btn"
+          >
+            👉 Quiero este curso
+          </a>
+        </div>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card course-img4">
+          <h3><i class="fa-solid fa-book"></i> Curso Recaterización</h3>
+          <div class="precio">
+            <span id="precio-basico">$1.200.000</span>
+            <!-- <p>todo incluido</p> -->
+          </div>
+          <ul>
+            <li>✔ B1 a C1.</li>
+            <li>✔ A1 a A2.</li>
+            <li>✔ Clases teóricas y prácticas supervisadas.</li>
+            <li>✔ Normas de tránsito.</li>
+          </ul>
+          <a
+            href="https://wa.me/573115218996"
+            target="_blank"
+            class="course-btn"
+          >
+            👉 Quiero este curso
+          </a>
+        </div>
+
+        <div class="course-card course-img5">
+          <h3><i class="fa-regular fa-clock"></i> Horas de Refuerzo</h3>
+          <div class="precio">
+            <span id="precio-completo">$1.200.000</span>
+            <!-- <p>todo incluido</p> -->
+          </div>
+          <ul>
+            <li>✔ 45000 carro/hora.</li>
+            <li>✔ 30000 moto/hora.</li>
+            <li>✔ Acompañamiento personalizado</li>
+            <br />
+            <br />
+            <br />
+            <p></p>
+          </ul>
+          <a
+            href="https://wa.me/573115218996"
+            target="_blank"
+            class="course-btn"
+          >
+            👉 Quiero este curso
+          </a>
+        </div>
+
+        <div class="course-card course-img6">
+          <h3>
+            <i class="fa-solid fa-graduation-cap"></i> Capacitaciones
+            Certificadas
+          </h3>
+          <div class="precio">
+            <span id="precio-refuerzo">$1.200.000</span>
+            <!-- <p>todo incluido</p> -->
+          </div>
+          <ul>
+            <li>✔ Manejo defensivo</li>
+            <li>✔ Pruebas teóricas y prácticas.</li>
+            <li>✔ Primeros Auxilios.</li>
+            <li>✔ Mecanica Básica.</li>
+            <li>✔ Manejo de sustancias peligrosas.</li>
+          </ul>
+          <a
+            href="https://wa.me/573115218996"
+            target="_blank"
+            class="course-btn"
+          >
+            👉 Quiero este curso
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--facilidades de pagos-->
+    <section class="pagos-aliados hidden">
+      <h2>Diferentes formas de pagar</h2>
+      <div class="logos-container">
+        <div class="aliados-pagos">
+          <img src="./imgs/Addi Logo - Azul.png" alt="Addi" class="logo-img" />
+          <img src="./imgs/logo.svg" alt="Sistecredito" class="logo-img" />
+          <img src="./imgs/nequi.svg" alt="Nequi" class="logo-img" />
+          <div class="icon-card-wrapper">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section id="confianza" class="trust hidden">
+      <h2>¿Por qué elegirnos?</h2>
+
+      <div class="trust-items">
+        <div class="trust-box">
+          <h4>✔ Instructores Certificados</h4>
+          <p>
+            Personal certificado por el ministerio de transporte y con amplia
+            experiencia en enseñanza automovilistica.
+          </p>
+        </div>
+        <div class="trust-box">
+          <h4>✔ Escuela Avalada</h4>
+          <p>Cumplimos con la normatividad colombiana vigente.</p>
+        </div>
+        <div class="trust-box">
+          <h4>✔ Vehículos idoneos</h4>
+          <p>Práctica segura y cómoda.</p>
+        </div>
+
+        <div class="trust-box">
+          <h4>✔ Atención personalizada</h4>
+          <p>Horarios flexibles.</p>
+          <li>
+            Horario: Para teoría Lunes a viernes 08 am a 10 am y 2 pm a 7.30pm
+            Sábados 08 am a 1.30 pm.
+          </li>
+          <li>
+            Horario:Para práctica Lunes a viernes 08 am a 12 pm y 2 pm a 06 pm
+            Sábados 08 am a 1.30 pm.
+          </li>
+        </div>
+        <div class="trust-box">
+          <h4>✔ Ubicación Estratégica</h4>
+          <p>Estamos en el barrio El Triunfo, Florencia – Caquetá.</p>
+        </div>
+      </div>
+    </section>
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="about-section hidden">
+      <h2>Nosotros</h2>
+      <div class="contenedor-texto">
+        <div class="about-container">
+          <div class="text-slider">
+            <h3 class="active">Estamos certificados</h3>
+
+            <h3>Realizamos procesos completos</h3>
+
+            <h3>Cumplimos con nuestros clientes</h3>
+
+            <h3>Formamos conductores responsables y seguros</h3>
+          </div>
+        </div>
+
+        <div class="texto">
+          <p>
+            <!-- En <strong>CEA FÉNIX</strong>, trabajamos para mejorar la seguridad
+            vial del país. Nuestra metodología se basa en una pedagogía clara y
+            práctica, diseñada para que pierdas el miedo al volante y adquieras
+            las destrezas necesarias bajo la normatividad vigente. -->
+
+            En <strong>CEA FÉNIX</strong>, formamos conductores seguros,
+            responsables y preparados para enfrentar los desafíos reales de la
+            vía. Nuestra metodología combina enseñanza práctica, acompañamiento
+            profesional y técnicas de aprendizaje modernas, permitiéndote ganar
+            confianza al volante desde el primer día y desarrollar habilidades
+            de conducción bajo los más altos estándares y la normatividad
+            vigente en Colombia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Nuestros Aliados -->
+      <div class="aliados-section">
+        <h2 class="section-title-aliados">Nuestros Aliados</h2>
+        <div class="aliados-grid">
+          <div class="aliado-btn aliado-btn-1">
+            <a href="./pages/sede1.html#sede1">
+              <img
+                src="./imgs/logo_lanacional-Photoroom.png"
+                alt="Aliado 1"
+                onerror="this.style.display = 'none'"
+              />
+            </a>
+          </div>
+
+          <div class="aliado-btn aliado-btn-2">
+            <a href="./pages/sede1.html#sede2">
+              <img
+                src="./imgs/logo_lanacional-Photoroom.png"
+                alt="Aliado 2"
+                class="aliado-logo"
+                onerror="this.style.display = 'none'"
+              />
+            </a>
+          </div>
+
+          <div class="aliado-btn aliado-btn-3">
+            <a href="./pages/sede1.html#sede3">
+              <!-- <i class="fa-solid fa-location-dot aliado-icon"></i> -->
+              <img
+                src="./imgs/logo_lanacional-Photoroom.png"
+                alt="Aliado 3"
+                class="aliado-logo"
+                onerror="this.style.display = 'none'"
+              />
+
+              <!-- <span class="aliado-nombre"> </span> -->
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios hidden">
+      <h2>Lo que dicen nuestros estudiantes</h2>
+
+      <div class="testimonios-grid" id="testimonios-grid">
+        <article class="testimonio">
+          <p id="t1-texto">
+            “Nunca había manejado y hoy ya tengo mi licencia. Los instructores
+            son muy pacientes y profesionales.”
+          </p>
+          <strong id="t1-nombre">— Laura Martínez</strong>
+          <span id="t1-curso">Curso Automóvil</span>
+        </article>
+
+        <article class="testimonio">
+          <p id="t2-texto">
+            “Excelente atención y horarios flexibles. Pasé el examen a la
+            primera.”
+          </p>
+          <strong id="t2-nombre">— Carlos Gómez</strong>
+          <span id="t2-curso">Refrendación de licencia</span>
+        </article>
+
+        <article class="testimonio">
+          <p id="t3-texto">
+            “Vehículos en perfecto estado y clases muy claras. Totalmente
+            recomendados.”
+          </p>
+          <strong id="t3-nombre">— Andrés Rojas</strong>
+          <span id="t3-curso">Curso Moto</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section class="ubicacion hidden">
+      <h2>Visítanos</h2>
+
+      <div class="ubicacion-grid">
+        <div>
+          <p>
+            <strong>📍 Dirección:</strong><br />
+            Barrio El Triunfo, Florencia – Caquetá, Colombia.<br />
+            Escuela de conducción autorizada para cursos y licencias.
+          </p>
+          <p><strong>📞 WhatsApp:</strong> 315 115 218996</p>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps?q=Barrio%20El%20Triunfo%20Florencia%20Caquet%C3%A1&output=embed"
+          loading="lazy"
+        >
+        </iframe>
+        <p>Atendemos estudiantes de Florencia y municipios cercanos.</p>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contacto" class="cta-final hidden">
+      <!-- <div class="cta-badge">
+        <i class="fa-solid fa-bolt"></i> Cupos limitados
+      </div> -->
+      <h2>¿Listo para sacar<br />tu licencia de conducción?</h2>
+      <p>
+        Inscripciones abiertas en todas nuestras sedes. Horarios flexibles,
+        instructores certificados y la mejor atención en Florencia, Caquetá.
+      </p>
+      <div class="cta-btns-group">
+        <a
+          href="https://wa.me/573115218996?text=Hola%2C%20quiero%20inscribirme%20en%20CEA%20FÉNIX"
+          class="cta-btn-wa"
+          target="_blank"
+        >
+          <i class="fa-brands fa-whatsapp"></i> Inscribirme por WhatsApp
+        </a>
+        <a href="./pages/contacto.html" class="cta-btn-outline">
+          <i class="fa-solid fa-envelope"></i> Enviar mensaje
+        </a>
+      </div>
+      <small class="cta-disclaimer"
+        ><i class="fa-solid fa-lock"></i> No compartimos tu información ·
+        Atención directa y personalizada</small
+      >
+    </section>
+    <!-- SOCIAL BAR -->
+    <div class="social-bar">
+      <a href="#" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+      <a href="#" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    <footer class="main-footer">
+      <p>© 2026 CEA Fenix</p>
+      <small>
+        Diseñado y desarrollado por
+        <a class="author" href="https://jhonge.com.co" target="_blank">
+          <strong>&lt;</strong>Jhonge<strong>/&gt;</strong>
+        </a>
+      </small>
+    </footer>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <script>
+      (async () => {
+        try {
+          const res = await fetch("/api/public/prices");
+          if (!res.ok) return;
+          const p = await res.json();
+          const fmt = (v) =>
+            v ? "$" + Number(v).toLocaleString("es-CO") : null;
+          const map = {
+            "precio-moto": p.precio_moto,
+            "precio-carro-c1": p.precio_c1,
+            "precio-carro-b1": p.precio_b1,
+            "precio-basico": p.precio_basico,
+            "precio-completo": p.precio_completo,
+            "precio-refuerzo": p.precio_refuerzo,
+          };
+          Object.entries(map).forEach(([id, val]) => {
+            const el = document.getElementById(id);
+            if (el && val) el.textContent = fmt(val);
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/floating-buttons.js" defer></script>
+    <script src="./js/modal-promocion.js" defer></script>
+    <script src="./js/carga-dasboard.js" defer></script>
+    <script src="./js/carga-testimonios.js" defer></script>
+  </body>
+</html>
