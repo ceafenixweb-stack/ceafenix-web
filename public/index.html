@@ -748,7 +748,7 @@ WHATSAPP: 573115218996
     <script>
       (async () => {
         try {
-          const res = await fetch("/api/public/prices");
+          const res = await fetch("https://cea-backend-production.up.railway.app/api/public/prices");
           if (!res.ok) return;
           const p = await res.json();
           const fmt = (v) =>

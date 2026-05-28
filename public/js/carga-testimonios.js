@@ -1,6 +1,6 @@
 
       // Carga dinámica de testimonios desde el dashboard
-      fetch("/api/public/testimonios")
+      fetch("https://cea-backend-production.up.railway.app/api/public/testimonios")
         .then((r) => r.json())
         .then((t) => {
           [[1], [2], [3]].forEach(([n]) => {

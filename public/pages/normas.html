@@ -212,7 +212,7 @@
   </div>
 
   <script>
-  fetch('/api/public/tips')
+  fetch('https://cea-backend-production.up.railway.app/api/public/tips')
     .then(r => r.json())
     .then(tips => {
       const grid = document.getElementById('tips-grid');

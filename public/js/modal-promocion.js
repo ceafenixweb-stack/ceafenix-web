@@ -45,7 +45,7 @@
         });
 
         // Cargar configuración dinámica desde la API
-        fetch("/api/public/promo")
+        fetch("https://cea-backend-production.up.railway.app/api/public/promo")
           .then((r) => r.json())
           .then((cfg) => {
             // Si está desactivado, no mostrar

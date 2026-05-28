@@ -218,7 +218,7 @@
     }
 
     try {
-      const res = await fetch('/api/public/productos');
+      const res = await fetch('https://cea-backend-production.up.railway.app/api/public/productos');
       if (!res.ok) throw new Error('Error cargando productos');
       const productos = await res.json();
       grid.innerHTML = '';
