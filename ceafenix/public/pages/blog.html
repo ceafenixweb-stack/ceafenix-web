@@ -204,7 +204,7 @@
 
 <script>
 // ── Blog posts dinámicos ───────────────────────────────────────
-fetch('/api/public/blog')
+fetch('https://cea-backend-production.up.railway.app/api/public/blog')
   .then(r => r.json())
   .then(posts => {
     const grid = document.getElementById('blog-grid');
@@ -230,11 +230,11 @@ fetch('/api/public/blog')
   .catch(() => {});
 
 // ── Videos dinámicos ───────────────────────────────────────────
-fetch('/api/settings', { headers: { Authorization: '' } })
+fetch('https://cea-backend-production.up.railway.app/api/settings', { headers: { Authorization: '' } })
   .catch(() => null);
 
 // Cargar videos desde endpoint público de settings (usamos un endpoint abierto)
-fetch('/api/public/blog-videos')
+fetch('https://cea-backend-production.up.railway.app/api/public/blog-videos')
   .then(r => r.json())
   .then(v => {
     const grid = document.getElementById('youtube-grid');

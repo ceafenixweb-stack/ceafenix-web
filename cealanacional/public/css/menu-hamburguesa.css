@@ -1,3 +1,20 @@
-/* ── Menú hamburguesa responsive — La Nacional Mocoa ── */
-/* Los estilos principales del header y nav ya están en header.css */
-/* Este archivo existe para mantener compatibilidad con la referencia en el HTML */
+#theme-toggle{
+
+    border: none;
+    cursor: pointer;
+   background-color: transparent;
+    font-size: 1.4rem;
+    padding: 0.25rem 0.5rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    #theme-toggle{
+        display: block;
+    }
+}
+
+
+.fa-moon{
+color: rgb(94, 68, 244);
+}

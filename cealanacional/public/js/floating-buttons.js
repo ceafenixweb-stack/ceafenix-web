@@ -2,7 +2,7 @@
   // Cargar número de WhatsApp desde el servidor, fallback al default
   let waNumber = "573001234567";
   try {
-    const r = await fetch("/api/public/settings");
+    const r = await fetch("https://cea-backend-production.up.railway.app/api/public/settings");
     if (r.ok) {
       const d = await r.json();
       if (d.whatsapp) waNumber = d.whatsapp;

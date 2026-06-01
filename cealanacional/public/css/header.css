@@ -1,42 +1,49 @@
 .main-header {
     position: sticky;
    width: 100%;
-    height: 190px;
+    height:auto;
     
     top: 0;
     z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem;
     background:
         linear-gradient(rgba(0, 0, 0, .6),
             rgba(0, 0, 0, .6)),
-        url("../imgs/bannerfenix3.webp");
-    /* object-fit: cover; */
+        url("../imgs/banner_nacional\ \(2\).png");
+    object-fit: cover;
+  
    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-    border-bottom: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border); */
     backdrop-filter: blur(10px);
+      background:
+        linear-gradient(rgba(80, 79, 79, 0.6),
+            rgba(69, 17, 225, 0.6));
 }
 
 /* HEADER */
 
 .logo img {
-  width: clamp(80px, 10vw, 140px);
+  width: 38%;
   height: auto;
   display: block;
+  margin: 10px;
+
 }
 
 /* NAV */
-
 #navbar ul {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 2rem;
     list-style: none;
-    margin-top: 5rem;/*se úede quitar*/
+  
    
 }
 
@@ -67,6 +74,12 @@
 
 #navbar a:hover::after {
     width: 100%;
+}
+
+.menu{
+    width: 35%;
+
+    margin: 10px 15px;
 }
 
 /* BOTÓN HAMBURGUESA */
@@ -119,18 +132,18 @@
     min-height: 300px;
     background: url("../imgs/conductor.png") center / cover no-repeat;
 } */
-.hero-img {
+/* .hero-img {
     width: 100%;
     height: 55%;
     min-height: 500px;
     border-radius: 15px;
     background:
         linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)),
-        url("../imgs/fabio.png");
+        url("/public/imgs/auto1.png");
 
     background-position: center;
     background-size: cover;
-}
+} */
 
 .hero-buttons {
     display: flex;

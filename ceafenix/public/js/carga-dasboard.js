@@ -3,7 +3,7 @@
 
         
       // Carga dinámica de media del sitio desde el dashboard
-      fetch("/api/public/site-media")
+      fetch("https://cea-backend-production.up.railway.app/api/public/site-media")
         .then((r) => r.json())
         .then((m) => {
           // Hero imagen de fondo

@@ -19,14 +19,14 @@
     />
 
     <!-- CSS propios -->
-    <link rel="stylesheet" href="/lanacional/css/variables.css" />
-    <link rel="stylesheet" href="/lanacional/css/stylos.css" />
-    <link rel="stylesheet" href="/lanacional/css/header.css" />
-    <link rel="stylesheet" href="/lanacional/css/footer.css" />
-    <link rel="stylesheet" href="/lanacional/css/darkmode.css" />
-    <link rel="stylesheet" href="/lanacional/css/floating-buttons.css" />
-    <link rel="stylesheet" href="/lanacional/css/modal-promocion.css" />
-    <link rel="stylesheet" href="/lanacional/css/menu-hamburguesa.css" />
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/stylos.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/darkmode.css" />
+    <link rel="stylesheet" href="./css/floating-buttons.css" />
+    <link rel="stylesheet" href="./css/modal-promocion.css" />
+    <link rel="stylesheet" href="./css/menu-hamburguesa.css" />
 
     <!-- Fuentes y librerías externas -->
     <link
@@ -51,7 +51,7 @@
     <div id="promo-media">
       <div class="promo-placeholder">
         <span></span>
-        <p><img src="/lanacional/imgs/fondo2.png" alt=""></p>
+        <p><img src="./imgs/fondo2.png" alt=""></p>
       </div>
       <span id="promo-badge">🔥 Oferta especial</span>
       <button id="promo-close" aria-label="Cerrar">✕</button>
@@ -85,7 +85,10 @@
     <!-- HEADER -->
     <header id="header" class="main-header">
       <div class="logo">
-        <a href="/" class="logo-text"><span></span></a>
+        <a href="https://ceafenix-web.vercel.app" class="logo-text">
+        <img src="./imgs/logo_nacional-removebg-preview.png" alt="CEA FÉNIX">
+        
+      </a>
       </div>
       <button
         class="menu-toggle"
@@ -98,9 +101,9 @@
       <nav id="navbar" class="menu">
         <ul>
           <li><a href="#hero-mocoa">Inicio</a></li>
-          <li><a href="/">CEAFénix</a></li>
-          <li><a href="/lanacional/pages/cursos-mocoa.html">Cursos</a></li>
-          <li><a href="/lanacional/pages/sede1.html">Sedes</a></li>
+          <li><a href="https://ceaelfenix.com">CEAFénix</a></li>
+          <li><a href="./pages/cursos-mocoa.html">Cursos</a></li>
+          <li><a href="../../ceafenix/public/pages/sede1.html">Sedes</a></li>
           <li><a href="#contacto-mocoa">Contacto</a></li>
           <li>
             <button id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
@@ -109,13 +112,26 @@
       </nav>
     </header>
 
+    <!-- <div class="hero-img">
+
+
+      </div> -->
+
     <!-- HERO -->
     <section id="hero-mocoa" class="hero-mocoa">
       <div class="hero-content">
-        <div class="hero-eyebrow">
+        <!-- <div class="hero-eyebrow">
           <i class="fa-solid fa-location-dot"></i> Mocoa, Putumayo
-        </div>
-        <h1>Saca tu licencia<br />en <span>La Nacional</span><br />Mocoa</h1>
+        </div> -->
+ <span class="highlight_txt">
+          conduciomos tu <strong class="highlight_txt-1"> presente </strong>
+           y aceleramos tu <strong class="highlight_txt-2"> futuro. </strong>
+        </span>
+
+        <h1>Saca tu licencia<br />en <span>La Nacional</span><br />Mocoa.
+       
+        </h1>
+        
         <p>
           Centro de enseñanza automovilística avalado por el Ministerio de
           Transporte. Instructores certificados, horarios flexibles y el mejor
@@ -249,11 +265,13 @@
         </p>
         <div class="aliados-mocoa-grid">
           <a
-            href="/"
+            href="https://ceafenix-web.vercel.app"
             class="aliado-mocoa-btn"
             title="CEA FÉNIX — Sede principal"
           >
-            <span style="font-size: 2rem">🔥</span>
+            <span style="font-size: 2rem">
+              <img src="./imgs/logo.png" alt="CEA FÉNIX" width="50px">
+            </span>
             <div>
               <strong>CEA FÉNIX</strong>
               <small>Sede principal · Florencia, Caquetá</small>
@@ -377,7 +395,7 @@
         </div>
       </div>
       <div style="text-align: center; margin-top: 2.5rem">
-        <a href="/lanacional/pages/cursos-mocoa.html" class="btn-ver-mas">
+        <a href="./pages/cursos-mocoa.html" class="btn-ver-mas">
           <i class="fa-solid fa-graduation-cap"></i> Ver todos los cursos y
           diplomados
           <i class="fa-solid fa-arrow-right"></i>
@@ -620,11 +638,11 @@
     <!-- CTA FINAL -->
     <section class="cta-sec">
       <div class="section-inner">
-        <span
+        <!-- <span
           class="section-tag"
           style="background: rgba(255, 255, 255, 0.15); color: #fff"
           >¡Cupos limitados!</span
-        >
+        > -->
         <h2 class="section-h">¿Listo para sacar tu licencia?</h2>
         <p>
           Contáctanos hoy y un asesor te guiará en todo el proceso. Cupos por
@@ -638,7 +656,7 @@
           >
             <i class="fa-brands fa-whatsapp"></i> Inscribirme ahora
           </a>
-          <a href="/lanacional/pages/sede1.html" class="btn-outline-w">
+          <a href="./pages/sede1.html" class="btn-outline-w">
             <i class="fa-solid fa-building"></i> Ver todas las sedes
           </a>
         </div>
@@ -649,8 +667,8 @@
     <footer class="footer-mocoa">
       <p>© 2026 La Nacional Mocoa · CEA FÉNIX · Mocoa, Putumayo</p>
       <p style="margin-top: 0.3rem">
-        <a href="/">Volver al sitio principal</a> ·
-        <a href="/lanacional/pages/contacto.html">Contacto</a>
+        <a href="https://ceafenix-web.vercel.app">Volver al sitio principal</a> ·
+        <a href="./pages/contacto.html">Contacto</a>
       </p>
       <small>
         Diseñado y desarrollado por
@@ -662,9 +680,9 @@
 
     <!-- Scripts — orden importa -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="/lanacional/js/menu-hamburguesa.js" defer></script>
-    <script src="/lanacional/js/modal-promocion.js" defer></script>
-    <script src="/lanacional/js/floating-buttons.js" defer></script>
-    <script src="/lanacional/js/mocoa-cursos.js" defer></script>
+    <script src="./js/menu-hamburguesa.js" defer></script>
+    <script src="./js/modal-promocion.js" defer></script>
+    <script src="./js/floating-buttons.js" defer></script>
+    <script src="./js/mocoa-cursos.js" defer></script>
   </body>
 </html>

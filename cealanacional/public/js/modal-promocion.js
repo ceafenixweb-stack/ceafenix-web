@@ -40,7 +40,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 
   // Cargar configuracion exclusiva de Mocoa desde la API
-  fetch('/api/public/promo-mocoa')
+  fetch('https://cea-backend-production.up.railway.app/api/public/promo-mocoa')
     .then(r => r.json())
     .then(cfg => {
       if (cfg.mocoa_promo_activo === '0') return;

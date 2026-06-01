@@ -1,4 +1,7 @@
-require("dotenv").config({ path: require("path").join(__dirname, "../.env") });
+// Solo carga .env en desarrollo local — en Railway las variables vienen del sistema
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config({ path: require("path").join(__dirname, "../.env") });
+}
 const express  = require("express");
 const cors     = require("cors");
 const { Pool } = require("pg");
@@ -484,6 +487,12 @@ const PUBLIC          = path.join(__dirname, "../../ceafenix/public");
 const PUBLIC_LANACIONAL = path.join(__dirname, "../../cealanacional/public");
 const UPLOADS_DIR     = path.join(PUBLIC, "uploads");
 if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+
+// Servir imgs para el dashboard (logo, etc)
+const BACKEND_PUBLIC = path.join(__dirname, "../public");
+if (fs.existsSync(BACKEND_PUBLIC)) {
+  app.use(express.static(BACKEND_PUBLIC));
+}
 
 function serveSSR(htmlFile, priceMap, req, res) {
   getAllPrices().then(prices => {

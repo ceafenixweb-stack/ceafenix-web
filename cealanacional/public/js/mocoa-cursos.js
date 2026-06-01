@@ -1,5 +1,5 @@
 // Carga dinámica de cursos Mocoa desde el dashboard
-fetch('/api/public/mocoa-cursos')
+fetch('https://cea-backend-production.up.railway.app/api/public/mocoa-cursos')
   .then(r => r.json())
   .then(c => {
     [1,2,3,4].forEach(n => {
