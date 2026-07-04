@@ -1,0 +1,255 @@
+.main-header {
+    position: sticky;
+   width: 100%;
+    height:10rem;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.356),
+            rgba(61, 61, 61, 0.6)),url("../imgs/banner_pc.webp");
+   background-size:100% 100%;
+   background-repeat: no-repeat;
+   background-position: center;
+   backdrop-filter: blur(10px);
+   
+  
+}
+
+/* HEADER */
+
+
+/* NAV */
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin-top: 7rem;
+}
+
+#navbar a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s ease;
+    position: relative;
+}
+
+#navbar a:hover {
+    color: #fbbf24;
+}
+
+/* EFECTO SUBRAYADO */
+
+#navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #fbbf24;
+    transition: .3s ease;
+}
+
+#navbar a:hover::after {
+    width: 100%;
+}
+
+/* BOTÓN HAMBURGUESA */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    margin-top: 45px;
+    width: 100%;
+    height: 70vh;
+    /* min-height: calc(35vh - 3rem); */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 2rem 1rem;
+    background-image: url("../imgs/img_4.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08); 
+    
+}
+
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* Detrás del texto y del overlay */
+}
+
+#hero-video iframe {
+  width: 100vw;
+  height: 56.25vw; /* Relación de aspecto para forzar cobertura */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Ajusta el tamaño para que cubra como 'cover' */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Evita que el usuario pause el video al hacer click */
+}
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+}
+
+.highlight {
+    color: var(--dark);
+}
+
+.hero p {
+    margin: 1.5rem 0;
+    color: var(--dark);
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+/* El contenedor principal */
+.hero-img {
+    position: relative; 
+    width: 100%;
+    height: 65vh;      
+    min-height: 200px;
+    border-radius: 15px;
+    overflow: hidden; 
+}
+
+/* El comportamiento del video */
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 100%;
+    height: 70%;
+    object-fit: cover; 
+    transform: translate(-50%, -50%); 
+    z-index: 1;        
+ 
+}
+/* Estilos generales */
+.hero-banner {
+  position: relative;
+  width: 75%;
+  min-height: 30%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video YouTube adaptado como fondo */
+#hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none; /* Evita que se pueda hacer clic en el video */
+}
+
+#hero-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
+}
+
+/* Capa semitransparente */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 2;
+}
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .hero-banner { min-height: 75vh; }
+  .hero-contenido { font-size: 1rem; padding: 1.5rem; }
+}
+@media (max-width: 480px) {
+  .hero-banner { min-height: 65vh; }
+  #hero-video { width: 200vw; height: 120vh; } /* Ajuste especial para móvil */
+}
+/* La capa de oscurecimiento (Overlay) */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 0.5 es el nivel de opacidad (50% oscuro) */
+    z-index: 2;         /* Queda por encima del video, pero por debajo del texto */
+}
+
+/* El contenido (Títulos, botones, etc.) */
+.hero-content {
+    position: relative;
+    top: -10rem;
+    z-index: 3;         /* Queda por encima de la capa oscura para que sea completamente legible */
+    color: #ffffff;     /* Texto en blanco para hacer un contraste perfecto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;       /* Ocupa toda la altura disponible para centrar el texto verticalmente */
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* ── Logo texto (reemplaza la imagen del logo) ── */
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: -.02em;
+  transition: opacity .2s;
+}
+.logo-text span {
+  color: #fbbf24;
+}
+.logo-text:hover {
+  opacity: .85;
+}
+.dark-mode .logo-text { color: #ffffff; }
+.dark-mode .logo-text span { color: var(--secondary, #fcc419); }

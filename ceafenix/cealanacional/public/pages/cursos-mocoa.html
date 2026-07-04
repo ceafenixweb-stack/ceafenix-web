@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todos los Cursos | La Nacional Mocoa — CEA FÉNIX</title>
+  <meta name="description" content="Catálogo completo de cursos, diplomados y talleres en La Nacional Mocoa. Licencias, manejo defensivo, seguridad vial y más.">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/darkmode.css">
+  <link rel="stylesheet" href="../css/floating-buttons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter','Poppins',sans-serif; background: var(--bg,#f8fafc); color: var(--text,#0f172a); }
+
+    /* ── HERO ── */
+    .page-hero {
+      background: linear-gradient(135deg,#0f172a 0%,#1e3a8a 55%,#0f172a 100%);
+      padding: 7rem 2rem 5rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(circle at 30% 50%,rgba(37,99,235,.3) 0%,transparent 60%),
+                  radial-gradient(circle at 70% 50%,rgba(14,165,233,.2) 0%,transparent 60%);
+    }
+    .page-hero > * { position:relative; z-index:1; }
+    .page-hero .eyebrow {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+      color:#fff; font-size:.78rem; font-weight:700; padding:.35rem 1rem;
+      border-radius:99px; letter-spacing:.07em; text-transform:uppercase; margin-bottom:1rem;
+    }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3.2rem); font-weight:800; color:#fff; margin-bottom:.75rem; line-height:1.1; }
+    .page-hero h1 span { color:#fbbf24; }
+    .page-hero p { color:rgba(255,255,255,.8); font-size:1.05rem; max-width:520px; margin:0 auto; line-height:1.65; }
+
+    /* ── FILTROS ── */
+    .filters {
+      background: var(--surface,#fff); border-bottom:1px solid var(--border,#e2e8f0);
+      position:sticky; top:0; z-index:50; padding:.75rem 2rem;
+    }
+    .filters-inner {
+      max-width:1100px; margin:0 auto; display:flex; flex-wrap:wrap; gap:.5rem; align-items:center;
+    }
+    .filter-btn {
+      background:transparent; border:1.5px solid var(--border,#e2e8f0);
+      border-radius:99px; padding:.4rem 1rem; font-size:.82rem; font-weight:600;
+      color:var(--text-light,#64748b); cursor:pointer; font-family:inherit;
+      transition:border-color .2s, background .2s, color .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color:var(--primary,#2563eb); background:var(--primary,#2563eb); color:#fff;
+    }
+    .filters-label { font-size:.82rem; font-weight:700; color:var(--text-light,#64748b); margin-right:.25rem; }
+
+    /* ── GRID ── */
+    .cursos-page { max-width:1100px; margin:0 auto; padding:3rem 2rem 5rem; }
+    .cat-section { margin-bottom:3.5rem; }
+    .cat-title {
+      font-size:1.3rem; font-weight:800; color:var(--title,#0f172a);
+      margin-bottom:1.5rem; display:flex; align-items:center; gap:.6rem;
+    }
+    .cat-title span { font-size:1.4rem; }
+    .cursos-grid {
+      display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem;
+    }
+    .curso-card {
+      background:var(--surface,#fff); border:1px solid var(--border,#e2e8f0);
+      border-radius:18px; overflow:hidden; display:flex; flex-direction:column;
+      transition:transform .25s, box-shadow .25s;
+      box-shadow:0 2px 12px rgba(0,0,0,.06);
+    }
+    .curso-card:hover { transform:translateY(-5px); box-shadow:0 14px 36px rgba(0,0,0,.12); }
+    .card-header {
+      padding:1.75rem 1.5rem 1.25rem; position:relative; overflow:hidden;
+    }
+    .card-header::after {
+      content:''; position:absolute; width:120px; height:120px; border-radius:50%;
+      background:rgba(255,255,255,.08); bottom:-35px; right:-35px;
+    }
+    .card-header .emoji { font-size:2rem; display:block; margin-bottom:.5rem; }
+    .card-header h3 { font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:.3rem; }
+    .card-header .cat-badge {
+      display:inline-block; background:rgba(255,255,255,.2); color:#fff;
+      font-size:.72rem; font-weight:700; padding:.2rem .65rem; border-radius:99px;
+    }
+    .card-body { padding:1.25rem 1.5rem; flex:1; display:flex; flex-direction:column; gap:.85rem; }
+    .card-body p { font-size:.875rem; color:var(--text-light,#64748b); line-height:1.6; flex:1; }
+    .card-meta { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .meta-tag {
+      background:rgba(37,99,235,.08); color:var(--primary,#2563eb);
+      font-size:.72rem; font-weight:600; padding:.2rem .6rem; border-radius:99px;
+    }
+    .card-price {
+      font-size:1.2rem; font-weight:800; color:var(--title,#0f172a);
+    }
+    .card-price small { font-size:.78rem; font-weight:400; color:var(--text-light,#64748b); }
+    .card-cta {
+      display:flex; align-items:center; justify-content:center; gap:.5rem;
+      background:#25d366; color:#fff; font-weight:700; font-size:.9rem;
+      padding:.7rem 1.25rem; border-radius:10px; text-decoration:none;
+      transition:background .2s, transform .2s; margin-top:auto;
+    }
+    .card-cta:hover { background:#1ebe5d; transform:translateY(-1px); }
+
+    /* Colores por categoría */
+    .ch-lic    { background:linear-gradient(135deg,#1d4ed8,#2563eb); }
+    .ch-moto   { background:linear-gradient(135deg,#0f766e,#0d9488); }
+    .ch-pub    { background:linear-gradient(135deg,#7c3aed,#8b5cf6); }
+    .ch-def    { background:linear-gradient(135deg,#0369a1,#0ea5e9); }
+    .ch-dip    { background:linear-gradient(135deg,#b45309,#f59e0b); }
+    .ch-aux    { background:linear-gradient(135deg,#be123c,#e11d48); }
+    .ch-cargo  { background:linear-gradient(135deg,#166534,#16a34a); }
+    .ch-virt   { background:linear-gradient(135deg,#4f46e5,#7c3aed); }
+
+    /* Dark mode */
+    .dark-mode .curso-card { background:#1e293b; border-color:#334155; }
+    .dark-mode .filters { background:#0f172a; border-color:#334155; }
+    .dark-mode .card-price { color:#f1f5f9; }
+
+    /* ── BACK BTN ── */
+    .back-bar { max-width:1100px; margin:0 auto; padding:1.5rem 2rem .5rem; }
+    .btn-back {
+      display:inline-flex; align-items:center; gap:.5rem;
+      color:var(--primary,#2563eb); font-weight:600; font-size:.9rem;
+      text-decoration:none; transition:gap .2s;
+    }
+    .btn-back:hover { gap:.75rem; }
+
+    /* ── MENU ── */
+    .menu-toggle {
+      display:none; background:none; border:none; cursor:pointer;
+      color:#fff; font-size:1.4rem; padding:.25rem .5rem;
+    }
+    @media(max-width:768px){
+      .menu-toggle { display:block; }
+      #navbar { position:absolute; top:100%; left:0; right:0; background:rgba(10,10,20,.97); backdrop-filter:blur(12px); max-height:0; overflow:hidden; transition:max-height .35s; }
+      #navbar.show { max-height:400px; }
+      #navbar ul { flex-direction:column; padding:1rem 1.5rem 1.5rem; gap:.25rem; border-top:1px solid rgba(255,255,255,.1); }
+      #navbar ul li a, #navbar ul li button { display:block; width:100%; padding:.65rem 0; font-size:1rem; color:#fff; }
+      .cursos-grid { grid-template-columns:1fr; }
+    }
+
+.menu ul li a {
+  text-decoration: none;
+  
+}
+
+ footer small,
+      footer small .author,
+      footer small .author strong {
+        text-decoration: none;
+        font-size: 0.7rem;
+        color: var(--text-light, #64748b);
+      }
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="logo"><a href="../" class="logo-text"><span></span></a></div>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Menú">☰</button>
+  <nav id="navbar" class="menu">
+    <ul>
+      <li><a href="../">Inicio</a></li>
+      <li><a href="/lanacional#cursos">Licencias</a></li>
+      <li><a href="/lanacional#contacto-mocoa">Contacto</a></li>
+      <li><a href="https://ceafenix-web.vercel.app">CEA FÉNIX</a></li>
+      <li><button id="theme-toggle"><i class="fa-solid fa-moon"></i></button></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <span class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> Catálogo completo</span>
+  <h1>Todos nuestros <span>cursos</span><br>y diplomados</h1>
+  <p>Formación certificada para conductores en Mocoa. Desde licencias hasta diplomados especializados.</p>
+</div>
+
+<!-- BACK -->
+<div class="back-bar">
+  <a href="../" class="btn-back">
+    <i class="fa-solid fa-arrow-left"></i> Volver a La Nacional Mocoa
+  </a>
+</div>
+
+<!-- FILTROS -->
+<div class="filters">
+  <div class="filters-inner">
+    <span class="filters-label">Filtrar:</span>
+    <button class="filter-btn active" data-cat="all">Todos</button>
+    <button class="filter-btn" data-cat="licencia">Licencias</button>
+    <button class="filter-btn" data-cat="especializado">Especializados</button>
+    <button class="filter-btn" data-cat="diplomado">Diplomados</button>
+    <button class="filter-btn" data-cat="virtual">Virtual</button>
+  </div>
+</div>
+
+<!-- CURSOS GRID -->
+<div class="cursos-page" id="cursos-page">
+  <div style="text-align:center;padding:60px 20px;color:#64748b">
+    <p>Cargando cursos...</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-mocoa" style="background:#0f172a;color:rgba(255,255,255,.6);text-align:center;padding:1.75rem;font-size:.85rem">
+  <p>© 2026 La Nacional Mocoa · CEA FÉNIX</p>
+  <p style="margin-top:.3rem">
+    <a href="../" style="color:#2563eb;text-decoration:none">← Volver a La Nacional Mocoa</a> ·
+    <a href="https://ceafenix-web.vercel.app" style="color:#2563eb;text-decoration:none">CEA FÉNIX</a>
+  </p>
+   <small>
+        Diseñado y desarrollado por
+        <a class="author" href="https://jhonge.com.co" target="_blank">
+          <strong>&lt;</strong>Jhonge<strong>/&gt;</strong>
+        </a>
+      </small>
+</footer>
+
+<script>
+  // ── Menú hamburguesa ──────────────────────────────────────────
+  const toggle = document.getElementById('menu-toggle');
+  const navbar = document.getElementById('navbar');
+  toggle?.addEventListener('click', () => {
+    const open = navbar.classList.toggle('show');
+    toggle.textContent = open ? '✕' : '☰';
+  });
+  navbar?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => { navbar.classList.remove('show'); toggle.textContent = '☰'; })
+  );
+
+  // ── Dark mode ────────────────────────────────────────────────
+  const themeBtn = document.getElementById('theme-toggle');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+    if (themeBtn) themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  }
+  themeBtn?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const dark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    themeBtn.innerHTML = dark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+  });
+
+  // ── Filtros ──────────────────────────────────────────────────
+  let _allCursos = [];
+
+  function aplicarFiltro(cat) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+    document.querySelectorAll('.cat-section').forEach(sec => {
+      sec.style.display = (cat === 'all' || sec.dataset.category === cat) ? 'block' : 'none';
+    });
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(btn =>
+    btn.addEventListener('click', () => aplicarFiltro(btn.dataset.cat))
+  );
+
+  // ── Carga dinámica de cursos ─────────────────────────────────
+  const CATS = {
+    licencia:      { titulo: '🪪 Licencias de conducción',   secId: 'sec-licencia'      },
+    especializado: { titulo: '🛡️ Cursos especializados',     secId: 'sec-especializado'  },
+    diplomado:     { titulo: '🏛️ Diplomados',                secId: 'sec-diplomado'      },
+    virtual:       { titulo: '💻 Cursos virtuales',           secId: 'sec-virtual'        },
+  };
+
+  function buildCard(c) {
+    const waMsg = encodeURIComponent('Me interesa el curso: ' + c.titulo);
+    const waUrl = 'https://wa.me/573001234568?text=' + waMsg;
+    return `
+      <div class="curso-card">
+        <div class="card-header ${c.color || 'ch-lic'}">
+          <span class="emoji">${c.emoji || '🎓'}</span>
+          <h3>${c.titulo}</h3>
+          <span class="cat-badge">${c.badge || ''}</span>
+        </div>
+        <div class="card-body">
+          <p>${c.descripcion}</p>
+          <div class="card-meta">
+            ${c.horas  ? `<span class="meta-tag">${c.horas}</span>`  : ''}
+            ${c.meta2  ? `<span class="meta-tag">${c.meta2}</span>`  : ''}
+            ${c.meta3  ? `<span class="meta-tag">${c.meta3}</span>`  : ''}
+          </div>
+          <div class="card-price">${c.precio || 'Consultar'} ${c.precio && c.precio.startsWith('$') ? '<small>COP</small>' : ''}</div>
+          <a href="${waUrl}" target="_blank" rel="noopener" class="card-cta">
+            <i class="fa-brands fa-whatsapp"></i> ${c.wa_texto || 'Inscribirme'}
+          </a>
+        </div>
+      </div>`;
+  }
+
+  function renderCursos(cursos) {
+    const page = document.getElementById('cursos-page');
+    if (!page) return;
+    _allCursos = cursos;
+
+    // Agrupar por categoría
+    const grupos = {};
+    cursos.forEach(c => {
+      if (!grupos[c.categoria]) grupos[c.categoria] = [];
+      grupos[c.categoria].push(c);
+    });
+
+    const catOrder = ['licencia','especializado','diplomado','virtual'];
+    // También incluir categorías personalizadas que no estén en catOrder
+    Object.keys(grupos).forEach(cat => { if (!catOrder.includes(cat)) catOrder.push(cat); });
+
+    page.innerHTML = catOrder
+      .filter(cat => grupos[cat] && grupos[cat].length)
+      .map(cat => {
+        const info = CATS[cat] || { titulo: cat.charAt(0).toUpperCase() + cat.slice(1) };
+        return `
+          <div class="cat-section" data-category="${cat}" id="${CATS[cat]?.secId || 'sec-'+cat}">
+            <h2 class="cat-title">${info.titulo}</h2>
+            <div class="cursos-grid">
+              ${grupos[cat].map(buildCard).join('')}
+            </div>
+          </div>`;
+      }).join('');
+  }
+
+  fetch('/api/public/cursos-mocoa')
+    .then(r => r.json())
+    .then(cursos => {
+      renderCursos(cursos);
+      // Re-bindear filtros después de renderizar
+      document.querySelectorAll('.filter-btn').forEach(btn =>
+        btn.addEventListener('click', () => aplicarFiltro(btn.dataset.cat))
+      );
+    })
+    .catch(() => {
+      document.getElementById('cursos-page').innerHTML =
+        '<p style="text-align:center;padding:60px;color:#94a3b8">No se pudieron cargar los cursos. Recarga la página.</p>';
+    });
+</script>
+<script src="../js/floating-buttons.js" defer></script>
+</body>
+</html>

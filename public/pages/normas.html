@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Educación Vial | CEA FÉNIX</title>
+
+  <meta
+    name="description"
+    content="Aprende señales de tránsito, normas viales y educación vial en Colombia."
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+ <link rel="stylesheet" href="../css/blog.css" />
+   <link rel="stylesheet" href="../css/courses.css">
+   <link rel="stylesheet" href="../css/darkmode.css" />
+   <link rel="stylesheet" href="../css/estilos.css">
+   <link rel="stylesheet" href="../css/footer.css" />
+   <link rel="stylesheet" href="../css/header.css">
+   <link rel="stylesheet" href="../css/responsive.css">
+   <link rel="stylesheet" href="../css/social.css">
+   <link rel="stylesheet" href="../css/variables.css">
+
+  <link rel="stylesheet" href="../css/floating-buttons.css">
+</head>
+
+<body>
+
+<header class="main-header">
+
+  <div class="logo"><a href="../index.html" class="logo-text"><span></span></a></div>
+  <button class="menu-toggle" id="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+    <nav id="navbar">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../index.html#cursos">Cursos</a></li>
+          <li><a href="../index.html#nosotros">Nosotros</a></li>
+          <li><a href="../pages/normas.html">Educación Vial</a></li>
+          <li><a href="../pages/store.html">Tienda</a></li>
+          <li><a href="../pages/blog.html">Blog</a></li>
+          <li><a href="../pages/sede1.html">Sedes</a></li>
+          <li><a href="../pages/contacto.html">Contacto</a></li>
+          <li class="social-nav-item">
+            <div class="social-nav">
+              <a href="https://www.facebook.com/ceafenix" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/ceafenix" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.tiktok.com/@ceafenix" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://www.youtube.com/@ceafenix" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </li>
+          <li>
+            <button id="theme-toggle">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="normas-hero">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <!-- <span class="tag">
+      Educación vial
+    </span> -->
+
+    <h1>
+      Aprende las señales de tránsito correctamente
+    </h1>
+
+    <p>
+      Conoce las normas viales, señales reglamentarias,
+      preventivas, informativas y transitorias.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- SEÑALES -->
+
+<section class="normas-grid-section">
+
+  <div class="section-title">
+
+    <h2>Tipos de señales</h2>
+
+    <p>
+      Identifica fácilmente las señales utilizadas
+      en las vías colombianas.
+    </p>
+
+  </div>
+
+  <div class="normas-grid">
+
+    <div class="norma-card">
+
+      <img
+        src="../imgs/reglamentarias.jpg"
+        alt="Reglamentarias"
+      />
+
+      <div class="norma-info">
+
+        <h3>Reglamentarias</h3>
+
+        <p>
+          Indican prohibiciones, obligaciones y
+          restricciones en la vía.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="norma-card">
+
+      <img
+        src="../imgs/preventivas.jpg"
+        alt="Preventivas"
+      />
+
+      <div class="norma-info">
+
+        <h3>Preventivas</h3>
+
+        <p>
+          Alertan sobre posibles riesgos o peligros
+          en la carretera.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="norma-card">
+
+      <img
+        src="../imgs/informativas.webp"
+        alt="Informativas"
+      />
+
+      <div class="norma-info">
+
+        <h3>Informativas</h3>
+
+        <p>
+          Guían y orientan al conductor durante el recorrido.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="norma-card">
+
+      <img
+        src="../imgs/transitorias.png"
+        alt="Transitorias"
+      />
+
+      <div class="norma-info">
+
+        <h3>Transitorias</h3>
+
+        <p>
+          Son señales temporales utilizadas en obras
+          y cambios viales.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TIPS -->
+
+<section class="tips-viales">
+
+  <h2>Tips de conducción segura</h2>
+
+  <div class="tips-grid" id="tips-grid">
+    <div class="tip-card" style="opacity:.4;pointer-events:none">
+      <i class="fa-solid fa-spinner fa-spin"></i>
+      <h3>Cargando...</h3><p>Un momento por favor.</p>
+    </div>
+  </div>
+
+  <script>
+  fetch('https://cea-backend-production.up.railway.app/api/public/tips')
+    .then(r => r.json())
+    .then(tips => {
+      const grid = document.getElementById('tips-grid');
+      if (!grid || !tips.length) return;
+      grid.innerHTML = tips.map(t =>
+        '<div class="tip-card"><i class="' + (t.icono||'fa-solid fa-lightbulb') + '"></i><h3>' + t.titulo + '</h3><p>' + t.descripcion + '</p></div>'
+      ).join('');
+    })
+    .catch(() => {
+      const grid = document.getElementById('tips-grid');
+      if (grid) grid.innerHTML =
+        '<div class="tip-card"><i class="fa-solid fa-car"></i><h3>Manejo defensivo</h3><p>Mantén siempre distancia segura y atención constante.</p></div>' +
+        '<div class="tip-card"><i class="fa-solid fa-helmet-safety"></i><h3>Usa protección</h3><p>El casco y cinturón pueden salvar vidas.</p></div>' +
+        '<div class="tip-card"><i class="fa-solid fa-road"></i><h3>Respeta señales</h3><p>Las señales existen para proteger conductores y peatones.</p></div>';
+    });
+  </script>
+
+</section>
+
+<footer class="main-footer">
+
+  <p>© 2026 CEA FÉNIX</p>
+
+  <small>
+        Diseñado por 
+        <a class="author" href="https://jhonge.com.co" target="_blank">
+         <strong>&lt;</strong>Jhonge<strong>/&gt;</strong>
+        </a>
+      </small>
+
+</footer>
+
+
+
+<script src="../js/main.js" type="module"></script>
+
+  <script src="../js/floating-buttons.js" defer></script>
+</body>
+</html>

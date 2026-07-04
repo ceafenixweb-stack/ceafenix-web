@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso — CEA Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/login.css">
+</head>
+<body class="login-body">
+
+  <div class="login-bg">
+    <div class="login-bg-shape shape-1"></div>
+    <div class="login-bg-shape shape-2"></div>
+    <div class="login-bg-shape shape-3"></div>
+  </div>
+
+  <main class="login-main">
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="brand-logo"><img src="/imgs/logo-removebg-preview.png" alt="CEA FÉNIX" style="width:100%;height:100%;object-fit:contain;padding:4px"></div>
+        <div class="brand-text">
+          <span class="brand-name">Panel Administrativo</span>
+          <span class="brand-sub">CEA Fenix</span>
+        </div>
+      </div>
+
+      <div class="login-form-wrap">
+        <h2 class="login-title">Iniciar sesión</h2>
+        <p class="login-desc">Accede con tus credenciales para continuar</p>
+
+        <div id="loginError" class="login-error" style="display:none;"></div>
+
+        <div class="form-group">
+          <label class="form-label" for="username">Usuario</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <input type="text" id="username" class="input" placeholder="tu_usuario" autocomplete="username">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Contraseña</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <input type="password" id="password" class="input" placeholder="••••••••" autocomplete="current-password">
+            <button type="button" class="toggle-pass" id="togglePass" title="Mostrar/ocultar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-full" id="loginBtn">
+          <span class="btn-text">Ingresar al dashboard</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="login-hint">
+        <details>
+          <summary>Ver credenciales de prueba</summary>
+          <div class="hint-content">
+            <code>admin / admin123</code> → Administrador<br>
+            <code>gerente / gerente123</code> → Gerente
+          </div>
+        </details>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { AuthService } from "./services/auth.js";
+
+    // Siempre limpiar sesión al llegar al login
+    // Esto evita que un token viejo salte el formulario
+    AuthService.logout();
+
+    const loginBtn = document.getElementById("loginBtn");
+    const errorBox = document.getElementById("loginError");
+
+    async function doLogin() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!username || !password) {
+        showError("Por favor completa todos los campos");
+        return;
+      }
+
+      loginBtn.disabled = true;
+      loginBtn.classList.add("btn-loading");
+      loginBtn.querySelector(".btn-text").textContent = "Verificando...";
+      errorBox.style.display = "none";
+
+      try {
+        await AuthService.login(username, password);
+        window.location.href = "/dashboard/dashboard.html";
+      } catch (err) {
+        showError(err.message || "Error al iniciar sesión");
+        loginBtn.disabled = false;
+        loginBtn.classList.remove("btn-loading");
+        loginBtn.querySelector(".btn-text").textContent = "Ingresar al dashboard";
+      }
+    }
+
+    function showError(msg) {
+      errorBox.textContent = msg;
+      errorBox.style.display = "block";
+    }
+
+    loginBtn.addEventListener("click", doLogin);
+    document.addEventListener("keydown", e => { if (e.key === "Enter") doLogin(); });
+
+    document.getElementById("togglePass").addEventListener("click", () => {
+      const inp = document.getElementById("password");
+      inp.type = inp.type === "password" ? "text" : "password";
+    });
+  </script>
+  <div style="text-align:center;padding:.75rem;font-size:.8rem;color:rgba(255,255,255,.35);position:fixed;bottom:0;left:0;right:0;pointer-events:none">
+    Diseñado y desarrollado por
+    <a href="https://jhonge.com.co" target="_blank" style="color:rgba(255,255,255,.55);font-weight:800;text-decoration:none;pointer-events:all;transition:color .2s"
+       onmouseover="this.style.color='rgb(156,8,99)'" onmouseout="this.style.color='rgba(255,255,255,.55)'">
+      <strong style="color:rgb(156,8,99);font-size:1rem">&lt;</strong>Jhonge<strong style="color:rgb(156,8,99);font-size:1rem">/&gt;</strong>
+    </a>
+  </div>
+</body>
+</html>

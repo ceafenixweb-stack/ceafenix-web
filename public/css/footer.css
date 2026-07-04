@@ -1,0 +1,42 @@
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: .9rem;
+  color: var(--gray);
+}
+
+.main-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-image: url(../imgs/footer_1-removebg-preview.png);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.main-footer p,
+.main-footer small {
+  margin: 0;
+}
+
+/*marca*/
+.author {
+  color: var(--text);
+  font-weight: 800;
+  font-size: 1rem;
+  transition: .3s ease;
+}
+
+.author:hover {
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.author strong {
+  color: rgb(156, 8, 99);
+  font-size: 1.3rem;
+  font-weight: 900;
+}
