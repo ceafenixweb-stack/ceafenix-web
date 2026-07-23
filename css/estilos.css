@@ -228,8 +228,12 @@ box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
   font-size: 1.8rem;
   color: var(--primary);
 
-}.fa-graduation-cap{
-color: var(--primary);
+}
+.fa-graduation-cap,
+.fa-clock,
+.fa-book {
+  font-size: 1.8rem;
+color: var(--bg);
 }
 .course-img1 ul li,
 .course-img2 ul li,
