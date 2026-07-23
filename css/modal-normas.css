@@ -1,0 +1,137 @@
+/* ════════════════════════════════════════════════
+   NORMAS — Hover, stagger reveal y modal fullscreen
+════════════════════════════════════════════════ */
+
+/* Stagger: cada card se revela un poco después que la anterior */
+.normas-grid .norma-card:nth-child(1) { transition-delay: .05s; }
+.normas-grid .norma-card:nth-child(2) { transition-delay: .15s; }
+.normas-grid .norma-card:nth-child(3) { transition-delay: .25s; }
+.normas-grid .norma-card:nth-child(4) { transition-delay: .35s; }
+
+/* Tarjeta interactiva: cursor + overflow para el zoom de imagen */
+.norma-card {
+  cursor: pointer;
+  outline: none;
+}
+
+.norma-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--primary);
+}
+
+.norma-card .card-img-container {
+  position: relative;
+  transition: transform .6s cubic-bezier(.22, .68, 0, 1.71);
+}
+
+.norma-card:hover .card-img-container,
+.norma-card:focus-visible .card-img-container {
+  transform: scale(1.06);
+}
+
+/* Hint de "ampliar" que aparece sobre la imagen al pasar el mouse */
+.card-zoom-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, .0);
+  color: #fff;
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity .35s ease, background .35s ease;
+  border-radius: 10px 10px 0 0;
+}
+
+.norma-card:hover .card-zoom-hint,
+.norma-card:focus-visible .card-zoom-hint {
+  opacity: 1;
+  background: rgba(15, 23, 42, .35);
+}
+
+/* ══ Modal fullscreen ══ */
+.norma-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(8, 10, 14, .93);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.norma-modal-overlay.active {
+  display: flex;
+  animation: normaFadeIn .25s ease;
+}
+
+.norma-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  animation: normaZoomIn .3s cubic-bezier(.22, .68, 0, 1.71);
+}
+
+.norma-modal-content img {
+  max-width: 100%;
+  max-height: 68vh;
+  width: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+  background: #fff;
+}
+
+.norma-modal-text {
+  text-align: center;
+  max-width: 700px;
+}
+
+.norma-modal-text h3 {
+  color: #fff;
+  margin-bottom: .5rem;
+}
+
+.norma-modal-text p {
+  color: rgba(255, 255, 255, .82);
+}
+
+.norma-modal-close {
+  position: fixed;
+  top: 1.5rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2001;
+  transition: transform .2s ease, color .2s ease;
+}
+
+.norma-modal-close:hover {
+  transform: rotate(90deg);
+  color: var(--secondary);
+}
+
+@keyframes normaFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes normaZoomIn {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 640px) {
+  .norma-modal-content img { max-height: 50vh; }
+  .norma-modal-close { top: 1rem; right: 1rem; font-size: 2rem; }
+}

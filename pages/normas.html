@@ -52,6 +52,7 @@
    <link rel="stylesheet" href="../css/variables.css">
 
   <link rel="stylesheet" href="../css/floating-buttons.css">
+  <link rel="stylesheet" href="../css/modal-normas.css">
 </head>
 
 <body>
@@ -97,7 +98,7 @@
 
   <div class="overlay"></div>
 
-  <div class="hero-content">
+  <div class="hero-content hidden">
 
     <!-- <span class="tag">
       Educación vial
@@ -120,7 +121,7 @@
 
 <section class="normas-grid-section">
 
-  <div class="section-title">
+  <div class="section-title hidden">
 
     <h2>Tipos de señales</h2>
 
@@ -133,10 +134,15 @@
 
   <div class="normas-grid">
 
-    <div class="norma-card">
+    <div class="norma-card hidden"
+         tabindex="0" role="button"
+         aria-label="Ver en grande: Señales reglamentarias"
+         data-img="../imgs/señales-reglamentarias.png"
+         data-title="Reglamentarias"
+         data-desc="Indican prohibiciones, obligaciones y restricciones en la vía. Son de forma circular, fondo blanco y borde rojo (o fondo azul para obligación). Ignorarlas es una infracción directa al Código Nacional de Tránsito.">
 
       <div class="card-img-container card-img-reglamentarias">
-
+        <span class="card-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
       </div>
 
       <div class="norma-info">
@@ -152,10 +158,16 @@
 
     </div>
 
-    <div class="norma-card">
+    <div class="norma-card hidden"
+         tabindex="0" role="button"
+         aria-label="Ver en grande: Señales preventivas"
+         data-img="../imgs/señales-preventivas.png"
+         data-title="Preventivas"
+         data-desc="Alertan sobre posibles riesgos o peligros en la vía (curvas, cruces, zonas escolares, animales). Son de forma cuadrada girada 45° (rombo), fondo amarillo y borde/figuras negras.">
 
-
-        <div class="card-img-container card-img-preventivas"></div>
+        <div class="card-img-container card-img-preventivas">
+          <span class="card-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </div>
 
 
       <div class="norma-info">
@@ -171,11 +183,16 @@
 
     </div>
 
-    <div class="norma-card">
+    <div class="norma-card hidden"
+         tabindex="0" role="button"
+         aria-label="Ver en grande: Señales informativas"
+         data-img="../imgs/señales-informativas.png"
+         data-title="Informativas"
+         data-desc="Guían y orientan al conductor sobre rutas, servicios, distancias y ubicación de lugares de interés. Son de forma rectangular, generalmente fondo azul o verde con letras blancas.">
 
-      
-      
-        <div class="card-img-container card-img-informativas"></div>
+        <div class="card-img-container card-img-informativas">
+          <span class="card-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+        </div>
 
       <div class="norma-info">
 
@@ -189,9 +206,16 @@
 
     </div>
 
-    <div class="norma-card">
+    <div class="norma-card hidden"
+         tabindex="0" role="button"
+         aria-label="Ver en grande: Señales transitorias"
+         data-img="../imgs/señales-transitorias.png"
+         data-title="Transitorias"
+         data-desc="Se usan temporalmente en obras, desvíos o daños en la vía. Son de fondo naranja con letras y bordes negros, e indican precaución adicional mientras dura la condición temporal.">
 
-      <div class="card-img-container card-img-transitorias"></div>
+      <div class="card-img-container card-img-transitorias">
+        <span class="card-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+      </div>
 
       <div class="norma-info">
 
@@ -214,7 +238,7 @@
 
 <section class="tips-viales">
 
-  <h2>Tips de conducción segura</h2>
+  <h2 class="hidden">Tips de conducción segura</h2>
 
   <div class="tips-grid" id="tips-grid">
     <div class="tip-card" style="opacity:.4;pointer-events:none">
@@ -244,6 +268,18 @@
 
 </section>
 
+<!-- MODAL SEÑALES -->
+<div id="norma-modal" class="norma-modal-overlay">
+  <button class="norma-modal-close" aria-label="Cerrar">&times;</button>
+  <div class="norma-modal-content">
+    <img id="norma-modal-img" src="" alt="">
+    <div class="norma-modal-text">
+      <h3 id="norma-modal-title"></h3>
+      <p id="norma-modal-desc"></p>
+    </div>
+  </div>
+</div>
+
 <footer class="main-footer">
       <p>© 2026 CEA Fénix</p>
       <small>
@@ -259,5 +295,6 @@
 <script src="../js/main.js" type="module"></script>
 
   <script src="../js/floating-buttons.js" defer></script>
+  <script src="../js/modal-normas.js" defer></script>
 </body>
 </html>

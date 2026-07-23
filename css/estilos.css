@@ -1480,7 +1480,7 @@ border-radius: 15px;
   background:
     linear-gradient(rgba(210, 204, 204, 0.65),
       rgba(202, 186, 186, 0.65)),
-    url("../imgs/normas-transito.png");
+    url("../imgs/normas-transito.webp");
 
   background-size: 100% 100%;
   background-position: center;
@@ -1504,19 +1504,19 @@ border-radius: 15px;
  
 }
 .card-img-reglamentarias{
-  background-image: url("../imgs/señales-reglamentarias.png");
+  background-image: url("../imgs/señales-reglamentarias.webp");
   border-radius: 10px 10px 0 0;
 }
 .card-img-preventivas{
-  background-image: url("../imgs/señales-preventivas.png");
+  background-image: url("../imgs/señales-preventivas.webp");
   border-radius: 10px 10px 0 0;
 }
 .card-img-informativas{
-  background-image: url("../imgs/señales-informativas.png");
+  background-image: url("../imgs/señales-informativas.webp");
   border-radius: 10px 10px 0 0;
 }
 .card-img-transitorias{
-  background-image: url("../imgs/señales-transitorias.png");
+  background-image: url("../imgs/señales-transitorias.webp");
   border-radius: 10px 10px 0 0;
 }
 .overlay {
